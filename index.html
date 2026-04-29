@@ -1,0 +1,1467 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>달동이의 베트남 여행</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400;700&display=swap');
+      :root {
+        --primary: #e8985e;
+        --primary-light: #f5c7a1;
+        --accent: #2d6a4f;
+        --dark: #1b1b1b;
+        --warm-bg: #fdf6ee;
+        --day1: #e07a5f;
+        --day2: #3d85c6;
+        --day3: #81b29a;
+        --day4: #f2cc8f;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+        background: var(--warm-bg);
+        color: var(--dark);
+        overflow-x: hidden;
+      }
+
+      /* HERO */
+      .hero {
+        position: relative;
+        height: 100vh;
+        min-height: 550px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: linear-gradient(
+          135deg,
+          #1a0f00 0%,
+          #2d1a0a 40%,
+          #4a2c17 100%
+        );
+        overflow: hidden;
+      }
+      .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            2px 2px at 20% 30%,
+            rgba(255, 255, 255, 0.3),
+            transparent
+          ),
+          radial-gradient(
+            2px 2px at 40% 70%,
+            rgba(255, 255, 255, 0.2),
+            transparent
+          ),
+          radial-gradient(
+            1px 1px at 60% 20%,
+            rgba(255, 255, 255, 0.4),
+            transparent
+          ),
+          radial-gradient(
+            1px 1px at 80% 60%,
+            rgba(255, 255, 255, 0.2),
+            transparent
+          ),
+          radial-gradient(
+            2px 2px at 10% 80%,
+            rgba(255, 255, 255, 0.3),
+            transparent
+          );
+        animation: twinkle 4s ease-in-out infinite alternate;
+      }
+      @keyframes twinkle {
+        0% {
+          opacity: 0.6;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .lanterns {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 200px;
+        display: flex;
+        justify-content: space-around;
+        padding: 0 5%;
+      }
+      .lantern {
+        width: 40px;
+        height: 55px;
+        border-radius: 50% 50% 45% 45%;
+        position: relative;
+        top: -10px;
+        animation: sway 3s ease-in-out infinite;
+        opacity: 0.85;
+        box-shadow: 0 0 20px rgba(255, 200, 100, 0.3);
+      }
+      .lantern::before {
+        content: '';
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 15px;
+        background: rgba(255, 255, 255, 0.3);
+      }
+      .lantern::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 8px;
+        background: inherit;
+        border-radius: 0 0 50% 50%;
+        filter: brightness(0.8);
+      }
+      .lantern:nth-child(1) {
+        background: #e74c3c;
+        animation-delay: 0s;
+      }
+      .lantern:nth-child(2) {
+        background: #f1c40f;
+        animation-delay: 0.5s;
+        top: 10px;
+      }
+      .lantern:nth-child(3) {
+        background: #e67e22;
+        animation-delay: 1s;
+      }
+      .lantern:nth-child(4) {
+        background: #e74c3c;
+        animation-delay: 1.5s;
+        top: 5px;
+      }
+      .lantern:nth-child(5) {
+        background: #f39c12;
+        animation-delay: 0.3s;
+      }
+      .lantern:nth-child(6) {
+        background: #e74c3c;
+        animation-delay: 0.8s;
+        top: 15px;
+      }
+      .lantern:nth-child(7) {
+        background: #f1c40f;
+        animation-delay: 1.2s;
+      }
+      @keyframes sway {
+        0%,
+        100% {
+          transform: rotate(-3deg);
+        }
+        50% {
+          transform: rotate(3deg);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+      .hero-sub {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-size: 1.1rem;
+        color: var(--primary-light);
+        letter-spacing: 4px;
+        margin-bottom: 16px;
+        opacity: 0;
+        animation: fadeUp 1s 0.3s forwards;
+      }
+      .hero-title {
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        color: #fff;
+        line-height: 1.2;
+        margin-bottom: 12px;
+        opacity: 0;
+        animation: fadeUp 1s 0.6s forwards;
+      }
+      .hero-title span {
+        background: linear-gradient(135deg, var(--primary-light), #ffd700);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .hero-date {
+        font-size: 1.15rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 300;
+        letter-spacing: 3px;
+        margin-bottom: 40px;
+        opacity: 0;
+        animation: fadeUp 1s 0.9s forwards;
+      }
+      .hero-heart {
+        font-size: 2rem;
+        opacity: 0;
+        animation:
+          fadeUp 1s 1.2s forwards,
+          pulse 2s 2s infinite;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.15);
+        }
+      }
+      .scroll-hint {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        animation: bounce 2s infinite;
+      }
+      .scroll-hint::after {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 30px;
+        background: rgba(255, 255, 255, 0.3);
+        margin: 8px auto 0;
+      }
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(8px);
+        }
+      }
+
+      /* NAV */
+      .day-nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        display: flex;
+        justify-content: center;
+        gap: 0;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+      }
+      .day-nav a {
+        text-decoration: none;
+        color: var(--dark);
+        padding: 16px 28px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        position: relative;
+        transition: all 0.3s;
+      }
+      .day-nav a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 3px;
+        border-radius: 2px;
+        transition: width 0.3s;
+      }
+      .day-nav a:nth-child(1)::after {
+        background: var(--day1);
+      }
+      .day-nav a:nth-child(2)::after {
+        background: var(--day2);
+      }
+      .day-nav a:nth-child(3)::after {
+        background: var(--day3);
+      }
+      .day-nav a:nth-child(4)::after {
+        background: var(--day4);
+      }
+      .day-nav a:nth-child(5)::after {
+        background: var(--primary);
+      }
+      .day-nav a:hover::after {
+        width: 60%;
+      }
+
+      /* SECTION HEADER */
+      .section-header {
+        text-align: center;
+        padding: 80px 20px 40px;
+      }
+      .section-header .day-badge {
+        display: inline-block;
+        padding: 8px 24px;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #fff;
+        margin-bottom: 16px;
+      }
+      .section-header h2 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .section-header p {
+        color: #888;
+        font-size: 0.95rem;
+        font-weight: 300;
+      }
+
+      /* TIMELINE */
+      .timeline {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0 20px 60px;
+        position: relative;
+      }
+      .timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 32px;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          #ddd 5%,
+          #ddd 95%,
+          transparent
+        );
+      }
+      .tl-item {
+        position: relative;
+        padding-left: 72px;
+        margin-bottom: 28px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s ease;
+      }
+      .tl-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .tl-time {
+        position: absolute;
+        left: 0;
+        top: 4px;
+        width: 64px;
+        text-align: center;
+      }
+      .tl-time span {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #999;
+      }
+      .tl-dot {
+        position: absolute;
+        left: 27px;
+        top: 8px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 3px solid;
+        background: #fff;
+        z-index: 1;
+      }
+      .tl-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 20px 24px;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+        border-left: 4px solid;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .tl-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      }
+      .tl-card h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .tl-card p {
+        font-size: 0.88rem;
+        color: #666;
+        line-height: 1.6;
+      }
+      .tl-tag {
+        display: inline-block;
+        font-size: 0.72rem;
+        padding: 3px 10px;
+        border-radius: 12px;
+        font-weight: 500;
+        margin-top: 8px;
+        margin-right: 4px;
+      }
+
+      .day1 .tl-dot {
+        border-color: var(--day1);
+      }
+      .day1 .tl-card {
+        border-left-color: var(--day1);
+      }
+      .day1 .tl-card h3 {
+        color: var(--day1);
+      }
+      .day1 .tl-tag {
+        background: rgba(224, 122, 95, 0.12);
+        color: var(--day1);
+      }
+      .day2 .tl-dot {
+        border-color: var(--day2);
+      }
+      .day2 .tl-card {
+        border-left-color: var(--day2);
+      }
+      .day2 .tl-card h3 {
+        color: var(--day2);
+      }
+      .day2 .tl-tag {
+        background: rgba(61, 133, 198, 0.12);
+        color: var(--day2);
+      }
+      .day3 .tl-dot {
+        border-color: var(--day3);
+      }
+      .day3 .tl-card {
+        border-left-color: var(--day3);
+      }
+      .day3 .tl-card h3 {
+        color: var(--day3);
+      }
+      .day3 .tl-tag {
+        background: rgba(129, 178, 154, 0.12);
+        color: var(--day3);
+      }
+      .day4 .tl-dot {
+        border-color: var(--day4);
+      }
+      .day4 .tl-card {
+        border-left-color: var(--day4);
+      }
+      .day4 .tl-card h3 {
+        color: #c9a227;
+      }
+      .day4 .tl-tag {
+        background: rgba(242, 204, 143, 0.2);
+        color: #b8941f;
+      }
+
+      /* GUIDE */
+      .guide-section {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px 80px;
+      }
+      .guide-section h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 12px;
+      }
+      .guide-section .section-sub {
+        text-align: center;
+        color: #999;
+        font-size: 0.9rem;
+        margin-bottom: 40px;
+      }
+      .guide-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 20px;
+      }
+      .guide-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        position: relative;
+        overflow: hidden;
+      }
+      .guide-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+      }
+      .guide-card .card-category {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--primary);
+        margin-bottom: 8px;
+      }
+      .guide-card h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--dark);
+      }
+      .guide-card .card-menu {
+        font-size: 0.85rem;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+      .guide-card .card-note {
+        font-size: 0.78rem;
+        color: #aaa;
+        padding-top: 10px;
+        border-top: 1px solid #f0f0f0;
+      }
+      .guide-card .card-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 1.5rem;
+        opacity: 0.15;
+      }
+      .massage-card {
+        background: linear-gradient(135deg, #fdfcfb, #e2d1c3 300%);
+      }
+      .massage-card .card-category {
+        color: var(--accent);
+      }
+
+      /* RULE BOX */
+      .rule-box {
+        max-width: 600px;
+        margin: 0 auto 80px;
+        padding: 32px 36px;
+        background: linear-gradient(135deg, #fff5f5, #fff0e5);
+        border-radius: 20px;
+        text-align: center;
+        border: 2px dashed var(--primary-light);
+        position: relative;
+      }
+      .rule-box::before {
+        content: '약속';
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--primary);
+        color: #fff;
+        padding: 4px 20px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+      .rule-box p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: #555;
+      }
+      .rule-box strong {
+        color: var(--day1);
+      }
+
+      /* CHECKLIST */
+      .checklist-section {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 20px 80px;
+      }
+      .check-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 20px;
+        background: #fff;
+        border-radius: 12px;
+        margin-bottom: 10px;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.03);
+        font-size: 0.92rem;
+        transition: transform 0.15s;
+        cursor: pointer;
+        user-select: none;
+      }
+      .check-item:hover {
+        transform: translateX(4px);
+      }
+      .check-icon {
+        width: 22px;
+        height: 22px;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+        font-size: 0.7rem;
+        color: transparent;
+      }
+      .check-item.checked .check-icon {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .check-item.checked span {
+        text-decoration: line-through;
+        color: #bbb;
+      }
+
+      /* FOOTER */
+      footer {
+        text-align: center;
+        padding: 60px 20px;
+        background: linear-gradient(135deg, #1a0f00, #2d1a0a);
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.85rem;
+      }
+      footer .footer-heart {
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+        animation: pulse 2s infinite;
+      }
+      footer p {
+        line-height: 1.8;
+      }
+      footer strong {
+        color: var(--primary-light);
+      }
+
+      @media (max-width: 600px) {
+        .day-nav a {
+          padding: 14px 12px;
+          font-size: 0.76rem;
+        }
+        .timeline::before {
+          left: 22px;
+        }
+        .tl-item {
+          padding-left: 54px;
+        }
+        .tl-time {
+          width: 44px;
+        }
+        .tl-time span {
+          font-size: 0.7rem;
+        }
+        .tl-dot {
+          left: 17px;
+        }
+        .tl-card {
+          padding: 16px 18px;
+        }
+        .guide-grid {
+          grid-template-columns: 1fr;
+        }
+        .lantern {
+          width: 28px;
+          height: 40px;
+        }
+      }
+    
+    .photo-strip{background:#3e2723;padding:40px 0;overflow:hidden}
+    .photo-track{display:flex;gap:20px;animation:photoScroll 30s linear infinite;width:max-content}
+    .photo-track img{width:200px;height:260px;object-fit:cover;border-radius:8px;flex-shrink:0;opacity:.85;transition:.3s}
+    .photo-track img:hover{opacity:1;transform:scale(1.03)}
+    @keyframes photoScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .hero-photo{position:absolute;width:200px;height:260px;border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);border:3px solid rgba(255,255,255,.1);z-index:2;opacity:0;animation:photoIn 1.2s ease forwards}
+    .hero-photo img{width:100%;height:100%;object-fit:cover}
+    .hero-photo:nth-child(1){left:6%;top:50%;transform:rotate(-7deg);animation-delay:.3s}
+    .hero-photo:nth-child(2){right:6%;top:45%;transform:rotate(5deg);animation-delay:.6s}
+    @keyframes photoIn{to{opacity:.65}}
+    .day-nav{border-top:3px solid #da251d !important}
+    footer{position:relative;overflow:hidden}
+    footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#da251d,#ffff00,#da251d)}
+    footer .caveat{font-family:Caveat,cursive;font-size:1.3rem;color:rgba(255,255,255,.5);margin-top:16px}
+    .timeline::before{left:76px !important}
+    .tl-item{padding-left:105px !important}
+    .tl-time{left:0 !important;width:64px !important;text-align:right !important;padding-right:8px}
+    .tl-time span{font-size:.92rem !important;font-weight:800 !important;color:#4a3728 !important}
+    .tl-dot{left:71px !important}
+    @media(max-width:768px){
+      .hero-photo{width:130px !important;height:170px !important}.hero-photo:nth-child(1){left:2% !important}.hero-photo:nth-child(2){right:2% !important}
+      .photo-track img{width:150px;height:200px}
+      .timeline::before{left:58px !important}.tl-item{padding-left:82px !important}.tl-dot{left:53px !important}
+      .tl-time{width:48px !important}.tl-time span{font-size:.8rem !important}
+      .day-nav a{padding:12px 10px;font-size:.74rem}
+      .guide-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:380px){
+      .hero-photo{display:none !important}
+      .timeline::before{left:48px !important}.tl-item{padding-left:70px !important}.tl-dot{left:43px !important}
+      .tl-time{width:40px !important}.tl-time span{font-size:.75rem !important}
+    }
+
+    
+    /* Mobile Preview Mode */
+    .preview-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+      background: #da251d;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: .85rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,0,0,.2);
+      font-family: 'Noto Sans KR', sans-serif;
+      transition: .2s;
+    }
+    .preview-toggle:hover { transform: scale(1.05); }
+    
+    body.mobile-preview {
+      background: #e8e8e8;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 0;
+      min-height: 100vh;
+    }
+    body.mobile-preview .page-wrap {
+      width: 390px;
+      max-height: 844px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      border-radius: 40px;
+      box-shadow: 0 20px 80px rgba(0,0,0,.25);
+      border: 8px solid #1a1a1a;
+      position: relative;
+      background: var(--warm-bg, #fdf8f0);
+    }
+    body.mobile-preview .page-wrap::before {
+      content: '';
+      position: sticky;
+      top: 0;
+      display: block;
+      width: 120px;
+      height: 28px;
+      background: #1a1a1a;
+      border-radius: 0 0 16px 16px;
+      margin: 0 auto;
+      z-index: 9998;
+    }
+    body.mobile-preview .preview-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+    }
+    body.mobile-preview .day-nav,
+    body.mobile-preview .dn {
+      position: relative !important;
+    }
+
+    
+    
+    .hero-title, .hero h1 {
+      word-break: keep-all !important;
+      overflow-wrap: normal !important;
+      white-space: normal !important;
+    }
+    .hero-title span {
+      display: inline !important;
+      white-space: nowrap !important;
+    }
+
+    /* ===== FINAL MOBILE POLISH ===== */
+    @media (max-width: 768px) {
+      .hero { min-height: 100vh; min-height: 100dvh; }
+      .hero-content, .hc { padding: 0 24px !important; }
+      .hero-sub, .hero .hero-sub { font-size: .95rem !important; letter-spacing: 2px !important; margin-bottom: 12px !important; }
+      .hero-title, .hero h1 { font-size: 2rem !important; line-height: 1.3 !important; word-break: keep-all !important; }
+      .hero-title span { display: inline !important; }
+      .hero-date { font-size: .85rem !important; letter-spacing: 2px !important; margin-bottom: 24px !important; flex-wrap: wrap; justify-content: center; display: flex; align-items: center; gap: 4px; }
+      .hero-date svg { width: 32px !important; height: 22px !important; margin: 0 4px !important; }
+      .hero-badge, .hero .hb { font-size: .7rem !important; padding: 8px 18px !important; letter-spacing: 1.5px !important; }
+      .hero-heart { font-size: 1.5rem !important; }
+      .scroll-hint { font-size: .65rem !important; bottom: 16px !important; }
+
+      .photo-strip { padding: 24px 0 !important; }
+      .photo-track { gap: 12px !important; }
+      .photo-track img { width: 140px !important; height: 185px !important; border-radius: 6px !important; }
+
+      .day-nav a { padding: 12px 8px !important; font-size: .72rem !important; letter-spacing: 0 !important; }
+
+      .rule-box { margin: 40px 16px !important; padding: 24px 18px !important; }
+      .rule-box::before { font-size: .7rem !important; padding: 4px 16px !important; top: -12px !important; }
+      .rule-box p { font-size: .85rem !important; line-height: 1.8 !important; word-break: keep-all !important; }
+
+      .section-header { padding: 50px 16px 24px !important; }
+      .section-header h2, .sh h2 { font-size: 1.5rem !important; }
+      .section-header p, .sh .su, .section-header .sub { font-size: .82rem !important; }
+      .day-badge { font-size: .7rem !important; padding: 6px 18px !important; }
+      .section-deco { font-size: 1.3rem !important; }
+
+      .timeline { padding: 0 12px 40px !important; max-width: 100% !important; }
+      .tl-card h3, .tc h3 { font-size: .9rem !important; line-height: 1.4 !important; word-break: keep-all !important; }
+      .tl-card p, .tc p { font-size: .8rem !important; line-height: 1.5 !important; word-break: keep-all !important; }
+      .tl-tag { font-size: .62rem !important; padding: 2px 7px !important; }
+
+      .guide-section { padding: 30px 12px 40px !important; }
+      .guide-section h2 { font-size: 1.4rem !important; }
+      .section-sub, .ssb { font-size: .8rem !important; margin-bottom: 24px !important; }
+      .guide-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+      .guide-card, .gc { padding: 18px !important; }
+      .guide-card h3, .gc h3 { font-size: .95rem !important; }
+      .card-menu, .cm { font-size: .8rem !important; }
+      .card-note, .cn { font-size: .72rem !important; }
+
+      .checklist-section, .cls { padding: 0 12px 40px !important; }
+      .check-item, .ck { padding: 12px 14px !important; font-size: .83rem !important; }
+
+      footer { padding: 40px 20px !important; }
+      footer p { font-size: .8rem !important; word-break: keep-all !important; }
+      footer .caveat, footer .cv { font-size: 1rem !important; }
+
+      /* Mobile preview frame adjustments */
+      body.mobile-preview .page-wrap { 
+        width: 375px; max-height: 812px; 
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-title, .hero h1 { font-size: 1.75rem !important; }
+      .hero-date svg { width: 28px !important; height: 19px !important; }
+      .timeline::before { left: 52px !important; }
+      .tl-item { padding-left: 74px !important; }
+      .tl-dot { left: 47px !important; width: 10px !important; height: 10px !important; }
+      .tl-time { width: 42px !important; }
+      .tl-time span { font-size: .75rem !important; }
+      .tl-card { padding: 14px !important; border-radius: 10px !important; }
+      .day-nav a { padding: 11px 6px !important; font-size: .68rem !important; }
+      body.mobile-preview .page-wrap { width: 340px; max-height: 740px; }
+    }
+
+    /* ===== FINAL DESIGN TOUCHES ===== */
+    .hero { background: linear-gradient(180deg, #1a0f00 0%, #2d1a0a 35%, #4a2c17 65%, #6d3f1f 100%) !important; }
+    
+    .rule-box {
+      background: linear-gradient(135deg, #fffbf2, #fff5e1) !important;
+      border: 2px solid #e8c170 !important;
+      box-shadow: 0 8px 32px rgba(232,193,112,.12) !important;
+    }
+
+    .tl-card { 
+      border-radius: 16px !important; 
+      box-shadow: 0 2px 16px rgba(0,0,0,.04) !important; 
+    }
+    .tl-card:hover { 
+      box-shadow: 0 8px 32px rgba(0,0,0,.08) !important; 
+    }
+
+    .guide-card {
+      border-radius: 16px !important;
+      transition: transform .25s, box-shadow .25s !important;
+    }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Better scrollbar for mobile preview */
+    body.mobile-preview .page-wrap::-webkit-scrollbar { width: 0; }
+    body.mobile-preview .page-wrap { scrollbar-width: none; }
+
+    </style>
+  </head>
+  <body>
+<button class="preview-toggle" onclick="document.body.classList.toggle('mobile-preview')">&#128241; PC / Mobile</button>
+<div class="page-wrap">
+    <section class="hero">
+      <div class="lanterns">
+        <div class="lantern"></div>
+        <div class="lantern"></div>
+        <div class="lantern"></div>
+        <div class="lantern"></div>
+        <div class="lantern"></div>
+        <div class="lantern"></div>
+        <div class="lantern"></div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-sub" style="font-family:Caveat,cursive">Xin chào, Việt Nam!</p>
+        <h1 class="hero-title"><span>달동이의</span><br>베트남 여행</h1>
+        <p class="hero-date"><svg viewBox="0 0 30 20" width="44" height="30" style="border-radius:3px;box-shadow:0 2px 8px rgba(0,0,0,.35);vertical-align:middle;margin:0 8px"><rect width="30" height="20" fill="#da251d"/><path d="M15 3.5l1.8 5.5h5.8l-4.7 3.4 1.8 5.5L15 14.5l-4.7 3.4 1.8-5.5-4.7-3.4h5.8z" fill="#ffff00"/></svg> 2026. 05. 07 — 05. 10 <svg viewBox="0 0 30 20" width="44" height="30" style="border-radius:3px;box-shadow:0 2px 8px rgba(0,0,0,.35);vertical-align:middle;margin:0 8px"><rect width="30" height="20" fill="#da251d"/><path d="M15 3.5l1.8 5.5h5.8l-4.7 3.4 1.8 5.5L15 14.5l-4.7 3.4 1.8-5.5-4.7-3.4h5.8z" fill="#ffff00"/></svg></p>
+        <div class="hero-heart">&#10084;&#65039;</div>
+      </div>
+      <div class="scroll-hint">SCROLL</div>
+    </section>
+<div class="photo-strip"><div class="photo-track"><img src="img/KakaoTalk_20260429_174018037_05.jpg" alt=""><img src="img/KakaoTalk_20260429_164211878.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_04.jpg" alt=""><img src="img/KakaoTalk_20260429_164529884.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_02.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_03.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_01.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_01.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_02.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_03.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_04.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_05.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_05.jpg" alt=""><img src="img/KakaoTalk_20260429_164211878.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_04.jpg" alt=""><img src="img/KakaoTalk_20260429_164529884.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_02.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_03.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_01.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_01.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_02.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_03.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_04.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_05.jpg" alt=""></div></div>
+
+    <nav class="day-nav">
+      <a href="#day1">DAY 1</a>
+      <a href="#day2">DAY 2</a>
+      <a href="#day3">DAY 3</a>
+      <a href="#day4">DAY 4</a>
+      <a href="#guide">GUIDE</a>
+    </nav>
+
+    <div style="padding-top: 60px">
+      <div class="rule-box">
+        <p>
+          여행은 소중한 시간이니까<br />
+          <strong>지치고 힘든 순간마저도 그 일부임을 기억하며,</strong><br />
+          모든 순간을 소중한 마음으로 소중히 담아가자 💗
+        </p>
+      </div>
+    </div>
+
+    <!-- DAY 1 -->
+    <div id="day1">
+      <div class="section-header">
+        <div class="day-badge" style="background: var(--day1)">DAY 1</div>
+        <h2>다낭 도착</h2>
+        <p>5월 7일 (수) &middot; 출국 &rarr; 다낭 첫날</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item day1">
+          <div class="tl-time"><span>06:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#9992;&#65039; 공항 도착</h3>
+            <p>6시~6시 반 공항 도착</p>
+          </div>
+        </div>
+        <div class="tl-item day1">
+          <div class="tl-time"><span>07:55</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#127748; 출국</h3>
+            <p>7:55 ~ 10:45 (4시간 50분)<br />예약코드: MGLJU2 &middot; TW-7</p>
+            <span class="tl-tag">비행기</span>
+          </div>
+        </div>
+        <div class="tl-item day1">
+          <div class="tl-time"><span>11:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#127836; 점심</h3>
+            <p>미꽝 바무아 / 냐고비엣 중 선택!</p>
+            <span class="tl-tag">맛집</span>
+          </div>
+        </div>
+        <div class="tl-item day1">
+          <div class="tl-time"><span>13:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#127978; 한시장 &amp; 핑크성당</h3>
+            <p>환전 &amp; 쇼핑 그리고 핑크성당 구경</p>
+            <span class="tl-tag">관광</span><span class="tl-tag">쇼핑</span>
+          </div>
+        </div>
+        <div class="tl-item day1">
+          <div class="tl-time"><span>17:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#128134; 마사지</h3>
+            <p>비행 피로 풀기 마사지 타임</p>
+            <span class="tl-tag">힐링</span>
+          </div>
+        </div>
+        <div class="tl-item day1">
+          <div class="tl-time"><span>18:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#127751; TMS호텔 체크인 &amp; 미케비치 선셋</h3>
+            <p>호텔 체크인 후 미케비치에서 일몰 감상</p>
+            <span class="tl-tag">숙소</span><span class="tl-tag">선셋</span>
+          </div>
+        </div>
+        <div class="tl-item day1">
+          <div class="tl-time"><span>20:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#127838; 저녁 &amp; 야시장</h3>
+            <p>
+              해산물 목식당 &amp; 야시장 구경<br />용다리 불쇼 (9시~9시 10분)
+            </p>
+            <span class="tl-tag">맛집</span><span class="tl-tag">야시장</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div id="day2">
+      <div class="section-header">
+        <div class="day-badge" style="background: var(--day2)">DAY 2</div>
+        <h2>바나힐 &amp; 다낭</h2>
+        <p>5월 8일 (목) &middot; 바나힐 테마파크 &amp; 다낭</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item day2">
+          <div class="tl-time"><span>07:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#127858; 조식 &amp; 바나힐 이동</h3>
+            <p>아침 식사 후 바나힐로 출발</p>
+          </div>
+        </div>
+        <div class="tl-item day2">
+          <div class="tl-time"><span>09:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#127984; 바나힐 컨텐츠</h3>
+            <p>골든 브릿지, 놀이기구, 정원 등 바나힐 즐기기!</p>
+            <span class="tl-tag">관광</span><span class="tl-tag">테마파크</span>
+          </div>
+        </div>
+        <div class="tl-item day2">
+          <div class="tl-time"><span>17:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#127946; 호텔 수영 &amp; 재정비</h3>
+            <p>호텔 수영장에서 쉬면서 재정비</p>
+            <span class="tl-tag">휴식</span>
+          </div>
+        </div>
+        <div class="tl-item day2">
+          <div class="tl-time"><span>18:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#127749; 미케비치 &amp; 저녁</h3>
+            <p>미케비치 산책 &amp; 저녁 식사</p>
+            <span class="tl-tag">맛집</span>
+          </div>
+        </div>
+        <div class="tl-item day2">
+          <div class="tl-time"><span>20:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#9986;&#65039; 88이발관</h3>
+            <p>
+              90분 풀코스: 족욕, 세안, 전신마사지, 손발톱관리, 헤드스파, 귀청소
+            </p>
+            <span class="tl-tag">힐링</span><span class="tl-tag">네일</span>
+          </div>
+        </div>
+        <div class="tl-item day2">
+          <div class="tl-time"><span>22:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#127865; 야식 or 루프탑 바</h3>
+            <p>야식을 먹을지 루프탑 바에서 분위기를 즐길지!</p>
+            <span class="tl-tag">야식</span><span class="tl-tag">바</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div id="day3">
+      <div class="section-header">
+        <div class="day-badge" style="background: var(--day3)">DAY 3</div>
+        <h2>호이안</h2>
+        <p>5월 9일 (금) &middot; 호이안 올드타운 &amp; 랜턴</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item day3">
+          <div class="tl-time"><span>08:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#127946; 호텔 수영장 &amp; 조식</h3>
+            <p>여유로운 아침 수영 &amp; 조식</p>
+          </div>
+        </div>
+        <div class="tl-item day3">
+          <div class="tl-time"><span>12:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#128663; 호이안 이동</h3>
+            <p>
+              체크아웃 후 호이안으로! (11시 픽업)<br />논스파에 짐 보관 (12:30
+              픽업, bebe tailor 도보 6분)
+            </p>
+            <span class="tl-tag">이동</span>
+          </div>
+        </div>
+        <div class="tl-item day3">
+          <div class="tl-time"><span>14:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#128675; 캄탄 코코넛 빌리지 바구니배</h3>
+            <p>코코넛 숲에서 바구니배 체험!</p>
+            <span class="tl-tag">액티비티</span>
+          </div>
+        </div>
+        <div class="tl-item day3">
+          <div class="tl-time"><span>15:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#9749; 카페 &amp; 휴식</h3>
+            <p>스근하게 카페에서 쉬기</p>
+            <span class="tl-tag">카페</span>
+          </div>
+        </div>
+        <div class="tl-item day3">
+          <div class="tl-time"><span>16:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#128134; 논스파 90분 마사지</h3>
+            <p>호이안 올드타운 위치의 논스파에서 힐링</p>
+            <span class="tl-tag">힐링</span>
+          </div>
+        </div>
+        <div class="tl-item day3">
+          <div class="tl-time"><span>17:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#128087; 재정비 &amp; 올드타운 준비</h3>
+            <p>올드타운 입장 준비!</p>
+          </div>
+        </div>
+        <div class="tl-item day3">
+          <div class="tl-time"><span>18:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#127981; 호이안 올드타운</h3>
+            <p>일본교 &rarr; 강변 산책 &rarr; 야시장</p>
+            <span class="tl-tag">관광</span><span class="tl-tag">야시장</span>
+          </div>
+        </div>
+        <div class="tl-item day3">
+          <div class="tl-time"><span>19:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#127836; 저녁식사 &amp; 맥주!</h3>
+            <p>호이안에서 맛있는 저녁과 시원한 맥주</p>
+            <span class="tl-tag">맛집</span>
+          </div>
+        </div>
+        <div class="tl-item day3">
+          <div class="tl-time"><span>20:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#127982; 랜턴 소원배</h3>
+            <p>호이안의 하이라이트! 강 위에 소원배 띄우기</p>
+            <span class="tl-tag">로맨틱</span>
+          </div>
+        </div>
+        <div class="tl-item day3">
+          <div class="tl-time"><span>21:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#127865; 야식 or 바</h3>
+            <p>야식이냐 바냐 그것이 문제로다</p>
+            <span class="tl-tag">야식</span><span class="tl-tag">바</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div id="day4">
+      <div class="section-header">
+        <div class="day-badge" style="background: var(--day4)">DAY 4</div>
+        <h2>마지막 날</h2>
+        <p>5월 10일 (토) &middot; 마사지 &amp; 귀국</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item day4">
+          <div class="tl-time"><span>07:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#127858; 조식</h3>
+            <p>마지막 아침을 여유롭게</p>
+          </div>
+        </div>
+        <div class="tl-item day4">
+          <div class="tl-time"><span>08:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#128134; 마사지</h3>
+            <p>
+              화이트오키드 7:50 픽업 &rarr; 8:10 마사지 60분<br />여행의
+              마무리를 힐링으로!
+            </p>
+            <span class="tl-tag">힐링</span>
+          </div>
+        </div>
+        <div class="tl-item day4">
+          <div class="tl-time"><span>10:00</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#128188; 공항 수속</h3>
+            <p>공항으로 이동 및 출국 수속</p>
+          </div>
+        </div>
+        <div class="tl-item day4">
+          <div class="tl-time"><span>11:45</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>&#9992;&#65039; 입국</h3>
+            <p>
+              11:45 ~ 18:25 (4시간 40분)<br />예약코드: MGLJU2 &middot; TW-8
+            </p>
+            <span class="tl-tag">비행기</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUIDE -->
+    <div id="guide">
+      <div class="guide-section">
+        <h2>&#127860; 맛집 리스트</h2>
+        <p class="section-sub">달동이가 엄선한 다낭 &amp; 호이안 맛집</p>
+        <div class="guide-grid">
+          <div class="guide-card">
+            <div class="card-icon">&#127858;</div>
+            <div class="card-category">
+              반쎄오 &middot; 분짜 &middot; 곱창쌀국수
+            </div>
+            <h3>안토이 (Nh&agrave; H&agrave;ng &#258;n Th&ocirc;i)</h3>
+            <div class="card-menu">반쎄오, 곱창쌀국수, 분짜 볶음밥</div>
+            <div class="card-note">페이스북 예약 / 미슐랭 선정</div>
+          </div>
+          <div class="guide-card">
+            <div class="card-icon">&#127858;</div>
+            <div class="card-category">반쎄오</div>
+            <h3>벱꾸온</h3>
+            <div class="card-menu">반쎄오, 짜조</div>
+          </div>
+          <div class="guide-card">
+            <div class="card-icon">&#127836;</div>
+            <div class="card-category">곱창쌀국수</div>
+            <h3>란조</h3>
+            <div class="card-menu">반반새우요리 / 곱창쌀국수</div>
+          </div>
+          <div class="guide-card">
+            <div class="card-icon">&#127836;</div>
+            <div class="card-category">미꽝</div>
+            <h3>미꽝 바무아</h3>
+            <div class="card-menu">다낭 대표 쌀국수 미꽝</div>
+          </div>
+          <div class="guide-card">
+            <div class="card-icon">&#127858;</div>
+            <div class="card-category">
+              반쎄오 &middot; 분짜 &middot; 쌀국수
+            </div>
+            <h3>냐고비엣 (Nh&agrave; G&#7895; Vi&#7879;t)</h3>
+            <div class="card-menu">베트남 전통 요리 종합</div>
+          </div>
+          <div class="guide-card">
+            <div class="card-icon">&#129424;</div>
+            <div class="card-category">해산물</div>
+            <h3>조조씨푸드</h3>
+            <div class="card-menu">생새우</div>
+          </div>
+          <div class="guide-card">
+            <div class="card-icon">&#129424;</div>
+            <div class="card-category">해산물</div>
+            <h3>목식당 (M&#7897;c Qu&aacute;n)</h3>
+            <div class="card-menu">
+              흑후추 크레이지피쉬 / 버터갈릭새우 / 파기름굴구이
+            </div>
+          </div>
+          <div class="guide-card">
+            <div class="card-icon">&#127829;</div>
+            <div class="card-category">화덕피자</div>
+            <h3>Pizza 4P's</h3>
+            <div class="card-menu">부라타치즈피자 / 스테이크</div>
+            <div class="card-note">구글맵 / 공식사이트 예약</div>
+          </div>
+          <div class="guide-card">
+            <div class="card-icon">&#127838;</div>
+            <div class="card-category">넴느엉</div>
+            <h3>꽌푸홍</h3>
+            <div class="card-menu">넴느엉 / 분팃느엉</div>
+          </div>
+          <div class="guide-card">
+            <div class="card-icon">&#127858;</div>
+            <div class="card-category">조림 &middot; 미슐랭</div>
+            <h3>벱헨</h3>
+            <div class="card-menu">돼지고기조림 / 가지요리 / 생선조림</div>
+            <div class="card-note">미슐랭 선정</div>
+          </div>
+          <div class="guide-card">
+            <div class="card-icon">&#11088;</div>
+            <div class="card-category">서희 강추</div>
+            <h3>바오프엉 (B&#7843;o Ph&#432;&#417;ng)</h3>
+            <div class="card-menu">아무거나 시켜도 다 맛도리</div>
+            <div class="card-note">호이안 숙소에서 도보 9분</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-section">
+        <h2>&#128134; 마사지 &amp; 스파</h2>
+        <p class="section-sub">여행의 피로를 녹여줄 스파 리스트</p>
+        <div class="guide-grid">
+          <div class="guide-card massage-card">
+            <div class="card-icon">&#127807;</div>
+            <div class="card-category">스파</div>
+            <h3>포레스트 스파</h3>
+            <div class="card-menu">네일 가능</div>
+          </div>
+          <div class="guide-card massage-card">
+            <div class="card-icon">&#127807;</div>
+            <div class="card-category">스파</div>
+            <h3>더힐 스파</h3>
+            <div class="card-menu">스톤마사지</div>
+            <div class="card-note">냐고비엣 옆 / 공항 픽업 가능</div>
+          </div>
+          <div class="guide-card massage-card">
+            <div class="card-icon">&#127807;</div>
+            <div class="card-category">스파</div>
+            <h3>빌라드 스파</h3>
+            <div class="card-menu">네일 가능</div>
+            <div class="card-note">롯데마트 옆</div>
+          </div>
+          <div class="guide-card massage-card">
+            <div class="card-icon">&#127807;</div>
+            <div class="card-category">스파</div>
+            <h3>코이 마사지</h3>
+            <div class="card-menu">90분: 22만</div>
+          </div>
+          <div class="guide-card massage-card">
+            <div class="card-icon">&#127807;</div>
+            <div class="card-category">호이안</div>
+            <h3>인호이안 스파</h3>
+            <div class="card-note">다낭 &rarr; 호이안 픽업 / 식사제공</div>
+          </div>
+          <div class="guide-card massage-card">
+            <div class="card-icon">&#127807;</div>
+            <div class="card-category">호이안</div>
+            <h3>논스파</h3>
+            <div class="card-note">호이안 올드타운 위치</div>
+          </div>
+          <div class="guide-card massage-card">
+            <div class="card-icon">&#128134;</div>
+            <div class="card-category">이발관</div>
+            <h3>88이발관</h3>
+            <div class="card-menu">
+              90분 풀코스: 족욕, 세안, 전신마사지, 손발톱, 헤드스파, 귀청소
+            </div>
+            <div class="card-note">네일 가능</div>
+          </div>
+          <div class="guide-card massage-card">
+            <div class="card-icon">&#128134;</div>
+            <div class="card-category">헤드스파</div>
+            <h3>레비닌 스파 / 퀸즈 살롱</h3>
+            <div class="card-menu">헤드스파 전문</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-section">
+        <h2>&#128717; 쇼핑 리스트</h2>
+        <p class="section-sub">잊지 말고 사올 것들</p>
+      </div>
+      <div class="checklist-section">
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>위스키 (넵모이) &#11088; &mdash; 윈마트 / 롯데마트</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>멜라토닌 (약국)</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>견과류 (땅콩, 캐슈넛, 마카다미아)</span>
+        </div>
+      </div>
+
+      <div class="guide-section">
+        <h2>&#9989; 출발 전 체크리스트</h2>
+        <p class="section-sub">출발 전에 꼭 확인하세요</p>
+      </div>
+      <div class="checklist-section">
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>이심 (eSIM) 준비</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>환전 준비 &mdash; soan ha 환전소</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>여행자보험 가입</span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-heart">&#10084;&#65039;</div>
+      <p>
+        <strong>달동이의 베트남 여행</strong><br />Da Nang &amp; Hoi An &middot;
+        2026.05.07 ~ 05.10<br /><br />행복한 여행 되자!</p>
+<p class="caveat">Hạnh phúc nha!<br><span style="font-size:.75rem;color:rgba(255,255,255,.35);font-family:Noto Sans KR,sans-serif;letter-spacing:1px">행복하자, 우리!</span>
+      </p>
+    
+    <div style="margin-top:48px;padding-top:36px;border-top:1px solid rgba(255,255,255,.06)">
+      <p style="font-family:'Noto Sans KR',sans-serif;font-size:.75rem;color:rgba(255,255,255,.25);letter-spacing:3px;margin-bottom:20px">TO. MY LOVE</p>
+      <p style="font-family:'Noto Sans KR',sans-serif;font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.6);line-height:2.4;letter-spacing:.3px;word-break:keep-all">
+        동휘야<br>
+        더 행복하고 더 사랑하자<br>
+        내가 더 노력할게<br><br>
+        <span style="font-size:1.2rem;font-weight:600;color:rgba(255,255,255,.8);letter-spacing:1px">사랑해 ❤️</span>
+      </p>
+    </div>
+
+  </footer>
+
+    
+  </div>
+<script>
+      const observer = new IntersectionObserver(
+        (e) => {
+          e.forEach((e) => {
+            e.isIntersecting && e.target.classList.add('visible');
+          });
+        },
+        { threshold: 0.15 },
+      );
+      document.querySelectorAll('.tl-item').forEach((e) => observer.observe(e));
+      document.querySelectorAll('.day-nav a').forEach((a) => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          const t = document.querySelector(a.getAttribute('href'));
+          if (t) {
+            const o = document.querySelector('.day-nav').offsetHeight;
+            window.scrollTo({ top: t.offsetTop - o, behavior: 'smooth' });
+          }
+        });
+      });
+    </script>
+</body>
+</html>
