@@ -1654,9 +1654,8 @@
             <span class="d-day" id="dday">D-?</span
             ><span class="d-label" id="dday-label"></span>
           </div>
-          <div class="weather-strip">
-            &#9728;&#65039; 다낭 5월 | 29~34&#176;C | &#127783;&#65039; 가끔
-            소나기 | &#128166; 습도 높음
+          <div class="weather-strip" id="weather-info">
+            &#9728;&#65039; 다낭 날씨 불러오는 중...
           </div>
         </div>
         <div class="quick-menu">
@@ -3089,6 +3088,28 @@
 
       // Hide standalone pages on load
       ['viet-page','sos-page'].forEach(id => { const el = document.getElementById(id); if(el) el.style.display = 'none'; });
+
+      // Live Weather - Open-Meteo API (Da Nang)
+      (async function() {
+        const w = document.getElementById('weather-info');
+        if (!w) return;
+        try {
+          const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=16.0544&longitude=108.2022&current=temperature_2m,weather_code,relative_humidity_2m,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia/Ho_Chi_Minh&forecast_days=3');
+          const d = await res.json();
+          const cur = d.current;
+          const daily = d.daily;
+          const code = cur.weather_code;
+          const icon = code <= 1 ? '\u2600\uFE0F' : code <= 3 ? '\u26C5' : code <= 48 ? '\uD83C\uDF2B\uFE0F' : code <= 67 ? '\uD83C\uDF27\uFE0F' : code <= 77 ? '\u2744\uFE0F' : '\u26C8\uFE0F';
+          const desc = code <= 1 ? '맑음' : code <= 3 ? '구름 조금' : code <= 48 ? '흐림' : code <= 67 ? '비' : code <= 77 ? '눈' : '뇌우';
+          const hi = Math.round(daily.temperature_2m_max[0]);
+          const lo = Math.round(daily.temperature_2m_min[0]);
+          const hum = cur.relative_humidity_2m;
+          const rain = daily.precipitation_probability_max[0];
+          w.innerHTML = icon + ' 다낭 지금 <b>' + Math.round(cur.temperature_2m) + '\u00B0C</b> ' + desc + ' | ' + lo + '~' + hi + '\u00B0C | \uD83D\uDCA7 습도 ' + hum + '% | \u2614 강수확률 ' + rain + '%';
+        } catch(e) {
+          w.innerHTML = '\u2600\uFE0F 다낭 5월 | 29~34\u00B0C | \uD83C\uDF27\uFE0F 가끔 소나기 | \uD83D\uDCA6 습도 높음';
+        }
+      })();
     </script>
   </body>
 </html>
