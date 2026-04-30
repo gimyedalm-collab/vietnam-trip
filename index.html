@@ -336,6 +336,15 @@
       .day-nav a:nth-child(5)::after {
         background: var(--primary);
       }
+      .day-nav a:nth-child(6)::after {
+        background: var(--accent);
+      }
+      .day-nav a:nth-child(7)::after {
+        background: #c9a227;
+      }
+      .day-nav a:nth-child(8)::after {
+        background: var(--day2);
+      }
       .day-nav a:hover::after {
         width: 60%;
       }
@@ -1233,6 +1242,54 @@
       body.mobile-preview .page-wrap {
         scrollbar-width: none;
       }
+
+      /* Map Links & Location Badges */
+      .card-map-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 0.72rem;
+        color: #fff;
+        background: linear-gradient(135deg, #4285f4, #3367d6);
+        padding: 6px 14px;
+        border-radius: 14px;
+        text-decoration: none;
+        margin-top: 10px;
+        transition: all 0.25s;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+      }
+      .card-map-link:hover {
+        background: linear-gradient(135deg, #3367d6, #2850a7);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+      }
+      .card-location {
+        display: inline-block;
+        font-size: 0.6rem;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 8px;
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
+      }
+      .loc-danang {
+        background: rgba(224, 122, 95, 0.12);
+        color: var(--day1);
+      }
+      .loc-hoian {
+        background: rgba(129, 178, 154, 0.12);
+        color: var(--day3);
+      }
+      .guide-card .card-note {
+        word-break: keep-all;
+      }
+      @media (max-width: 768px) {
+        .card-map-link {
+          font-size: 0.65rem !important;
+          padding: 5px 11px !important;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1345,7 +1402,10 @@
       <a href="#day2">DAY 2</a>
       <a href="#day3">DAY 3</a>
       <a href="#day4">DAY 4</a>
-      <a href="#guide">GUIDE</a>
+      <a href="#food">맛집</a>
+      <a href="#spa">스파</a>
+      <a href="#booking">예약</a>
+      <a href="#packing">준비물</a>
     </nav>
 
     <div style="padding-top: 60px">
@@ -1652,146 +1712,394 @@
     </div>
 
     <!-- GUIDE -->
-    <div id="guide">
+    <div id="food">
       <div class="guide-section">
         <h2>&#127860; 맛집 리스트</h2>
         <p class="section-sub">달동이가 엄선한 다낭 &amp; 호이안 맛집</p>
         <div class="guide-grid">
           <div class="guide-card">
             <div class="card-icon">&#127858;</div>
+            <span class="card-location loc-danang">다낭</span>
             <div class="card-category">
               반쎄오 &middot; 분짜 &middot; 곱창쌀국수
             </div>
-            <h3>안토이 (Nh&agrave; H&agrave;ng &#258;n Th&ocirc;i)</h3>
+            <h3>안토이 (&#258;n Th&ocirc;i)</h3>
             <div class="card-menu">반쎄오, 곱창쌀국수, 분짜 볶음밥</div>
-            <div class="card-note">페이스북 예약 / 미슐랭 선정</div>
+            <div class="card-note">
+              &#128205; 114 B&#7841;ch &#272;&#7857;ng, H&#7843;i Ch&acirc;u
+              &middot; 미슐랭 빕구르망
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=An+Thoi+Restaurant+114+Bach+Dang+Da+Nang"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
           <div class="guide-card">
             <div class="card-icon">&#127858;</div>
-            <div class="card-category">반쎄오</div>
-            <h3>벱꾸온</h3>
+            <span class="card-location loc-danang">다낭</span>
+            <div class="card-category">반쎄오 &middot; 미슐랭</div>
+            <h3>벱꾸온 (B&#7871;p Cu&#7889;n)</h3>
             <div class="card-menu">반쎄오, 짜조</div>
+            <div class="card-note">
+              &#128205; 31-33 Tr&#7847;n B&#7841;ch &#272;&#7857;ng, S&#417;n
+              Tr&agrave;
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Bep+Cuon+31+Tran+Bach+Dang+Da+Nang"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
           <div class="guide-card">
             <div class="card-icon">&#127836;</div>
+            <span class="card-location loc-danang">다낭</span>
             <div class="card-category">곱창쌀국수</div>
-            <h3>란조</h3>
+            <h3>란조 (L&acirc;nzo)</h3>
             <div class="card-menu">반반새우요리 / 곱창쌀국수</div>
+            <div class="card-note">
+              &#128205; 169 Tr&#7847;n Ph&uacute;, H&#7843;i Ch&acirc;u
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Lanzo+169+Tran+Phu+Da+Nang"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
           <div class="guide-card">
             <div class="card-icon">&#127836;</div>
+            <span class="card-location loc-danang">다낭</span>
             <div class="card-category">미꽝</div>
-            <h3>미꽝 바무아</h3>
+            <h3>미꽝 바무아 (M&#7923; Qu&#7843;ng B&agrave; Mua)</h3>
             <div class="card-menu">다낭 대표 쌀국수 미꽝</div>
+            <div class="card-note">
+              &#128205; 19-21 Tr&#7847;n B&igrave;nh Tr&#7885;ng, H&#7843;i
+              Ch&acirc;u
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=My+Quang+Ba+Mua+19+Tran+Binh+Trong+Da+Nang"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
           <div class="guide-card">
             <div class="card-icon">&#127858;</div>
+            <span class="card-location loc-danang">다낭</span>
             <div class="card-category">
               반쎄오 &middot; 분짜 &middot; 쌀국수
             </div>
             <h3>냐고비엣 (Nh&agrave; G&#7895; Vi&#7879;t)</h3>
             <div class="card-menu">베트남 전통 요리 종합</div>
+            <div class="card-note">
+              &#128205; 49-51 Nguy&#7877;n Th&aacute;i H&#7885;c, H&#7843;i
+              Ch&acirc;u &middot; 한시장 도보 1분
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Nha+Go+Viet+49+Nguyen+Thai+Hoc+Da+Nang"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
           <div class="guide-card">
             <div class="card-icon">&#129424;</div>
+            <span class="card-location loc-danang">다낭</span>
             <div class="card-category">해산물</div>
             <h3>조조씨푸드</h3>
             <div class="card-menu">생새우</div>
+            <div class="card-note">&#128205; 미케비치 인근</div>
+            <a
+              href="https://maps.app.goo.gl/PJJ7PHhBzN5uC7Ao6"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
           <div class="guide-card">
             <div class="card-icon">&#129424;</div>
+            <span class="card-location loc-danang">다낭</span>
             <div class="card-category">해산물</div>
-            <h3>목식당 (M&#7897;c Qu&aacute;n)</h3>
+            <h3>목식당 (H&#7843;i S&#7843;n M&#7897;c Qu&aacute;n)</h3>
             <div class="card-menu">
               흑후추 크레이지피쉬 / 버터갈릭새우 / 파기름굴구이
             </div>
+            <div class="card-note">
+              &#128205; 26 T&ocirc; Hi&#7871;n Th&agrave;nh, S&#417;n Tr&agrave;
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Hai+San+Moc+Quan+26+To+Hien+Thanh+Da+Nang"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
           <div class="guide-card">
             <div class="card-icon">&#127829;</div>
+            <span class="card-location loc-danang">다낭</span>
             <div class="card-category">화덕피자</div>
             <h3>Pizza 4P's</h3>
             <div class="card-menu">부라타치즈피자 / 스테이크</div>
-            <div class="card-note">구글맵 / 공식사이트 예약</div>
+            <div class="card-note">
+              &#128205; 8 Ho&agrave;ng V&#259;n Th&#7909;, H&#7843;i Ch&acirc;u
+              &middot; 공식사이트 예약
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Pizza+4Ps+8+Hoang+Van+Thu+Da+Nang"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
           <div class="guide-card">
             <div class="card-icon">&#127838;</div>
-            <div class="card-category">넴느엉</div>
-            <h3>꽌푸홍</h3>
+            <span class="card-location loc-danang">다낭</span>
+            <div class="card-category">넴느엉 &middot; 미슐랭</div>
+            <h3>꽌푸홍 (Qu&aacute;n Ph&uacute; H&#7891;ng)</h3>
             <div class="card-menu">넴느엉 / 분팃느엉</div>
+            <div class="card-note">
+              &#128205; 19 Y&ecirc;n B&aacute;i, H&#7843;i Ch&acirc;u &middot;
+              미슐랭 빕구르망
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Quan+Phu+Hong+19+Yen+Bai+Da+Nang"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
           <div class="guide-card">
             <div class="card-icon">&#127858;</div>
+            <span class="card-location loc-danang">다낭</span>
             <div class="card-category">조림 &middot; 미슐랭</div>
-            <h3>벱헨</h3>
+            <h3>벱헨 (B&#7871;p H&ecirc;n)</h3>
             <div class="card-menu">돼지고기조림 / 가지요리 / 생선조림</div>
-            <div class="card-note">미슐랭 선정</div>
+            <div class="card-note">
+              &#128205; 47 L&ecirc; H&#7891;ng Phong, H&#7843;i Ch&acirc;u
+              &middot; 미슐랭 선정
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Bep+Hen+47+Le+Hong+Phong+Da+Nang"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
           <div class="guide-card">
             <div class="card-icon">&#11088;</div>
+            <span class="card-location loc-hoian">호이안</span>
             <div class="card-category">서희 강추</div>
-            <h3>바오프엉 (B&#7843;o Ph&#432;&#417;ng)</h3>
+            <h3>
+              바오프엉 (Nh&agrave; H&agrave;ng B&#7843;o Ph&#432;&#417;ng)
+            </h3>
             <div class="card-menu">아무거나 시켜도 다 맛도리</div>
-            <div class="card-note">호이안 숙소에서 도보 9분</div>
+            <div class="card-note">
+              &#128205; 2 Ng&ocirc; Quy&#7873;n, Minh An &middot; 숙소에서 도보
+              9분
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Nha+Hang+Bao+Phuong+2+Ngo+Quyen+Hoi+An"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
         </div>
       </div>
 
-      <div class="guide-section">
+      <div id="spa" class="guide-section">
         <h2>&#128134; 마사지 &amp; 스파</h2>
         <p class="section-sub">여행의 피로를 녹여줄 스파 리스트</p>
         <div class="guide-grid">
           <div class="guide-card massage-card">
             <div class="card-icon">&#127807;</div>
+            <span class="card-location loc-danang">다낭</span>
             <div class="card-category">스파</div>
-            <h3>포레스트 스파</h3>
+            <h3>콩스파 (Cong Spa &amp; Nail)</h3>
             <div class="card-menu">네일 가능</div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Cong+Spa+Nail+Da+Nang"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
           <div class="guide-card massage-card">
             <div class="card-icon">&#127807;</div>
+            <span class="card-location loc-danang">다낭</span>
             <div class="card-category">스파</div>
-            <h3>더힐 스파</h3>
-            <div class="card-menu">스톤마사지</div>
-            <div class="card-note">냐고비엣 옆 / 공항 픽업 가능</div>
+            <h3>포레스트 스파 (Forest Spa)</h3>
+            <div class="card-menu">네일 가능</div>
+            <div class="card-note">
+              &#128205; 396 V&otilde; Nguy&ecirc;n Gi&aacute;p, S&#417;n
+              Tr&agrave;
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Forest+Spa+396+Vo+Nguyen+Giap+Da+Nang"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
           <div class="guide-card massage-card">
             <div class="card-icon">&#127807;</div>
+            <span class="card-location loc-danang">다낭</span>
+            <div class="card-category">스파</div>
+            <h3>더힐 스파 (The Hill Spa)</h3>
+            <div class="card-menu">스톤마사지</div>
+            <div class="card-note">
+              &#128205; K498/6 V&otilde; Nguy&ecirc;n Gi&aacute;p &middot; 공항
+              픽업 가능
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=The+Hill+Spa+Vo+Nguyen+Giap+Da+Nang"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
+          </div>
+          <div class="guide-card massage-card">
+            <div class="card-icon">&#127807;</div>
+            <span class="card-location loc-danang">다낭</span>
             <div class="card-category">스파</div>
             <h3>빌라드 스파</h3>
             <div class="card-menu">네일 가능</div>
-            <div class="card-note">롯데마트 옆</div>
+            <div class="card-note">&#128205; 롯데마트 옆</div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Villard+Spa+Da+Nang"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
           <div class="guide-card massage-card">
             <div class="card-icon">&#127807;</div>
+            <span class="card-location loc-danang">다낭</span>
             <div class="card-category">스파</div>
             <h3>코이 마사지</h3>
             <div class="card-menu">90분: 22만</div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Koi+Massage+Da+Nang"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
           <div class="guide-card massage-card">
             <div class="card-icon">&#127807;</div>
+            <span class="card-location loc-hoian">호이안</span>
             <div class="card-category">호이안</div>
             <h3>인호이안 스파</h3>
             <div class="card-note">다낭 &rarr; 호이안 픽업 / 식사제공</div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=In+Hoi+An+Spa"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
           <div class="guide-card massage-card">
             <div class="card-icon">&#127807;</div>
+            <span class="card-location loc-hoian">호이안</span>
             <div class="card-category">호이안</div>
-            <h3>논스파</h3>
-            <div class="card-note">호이안 올드타운 위치</div>
+            <h3>논스파 (Non Spa)</h3>
+            <div class="card-note">
+              &#128205; 호이안 올드타운 위치 &middot; 650,000VND/1인
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Non+Spa+Hoi+An"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
+          </div>
+          <div class="guide-card massage-card">
+            <div class="card-icon">&#127807;</div>
+            <span class="card-location loc-hoian">호이안</span>
+            <div class="card-category">호이안</div>
+            <h3>화이트오키드 (White Orchid Spa)</h3>
+            <div class="card-menu">시그니처 60분 &middot; 500,000VND/1인</div>
+            <div class="card-note">
+              &#128205; 15 M&#7841;c &#272;&#297;nh Chi, Hoi An
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=White+Orchid+Spa+15+Mac+Dinh+Chi+Hoi+An"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
           <div class="guide-card massage-card">
             <div class="card-icon">&#128134;</div>
+            <span class="card-location loc-danang">다낭</span>
             <div class="card-category">이발관</div>
             <h3>88이발관</h3>
             <div class="card-menu">
               90분 풀코스: 족욕, 세안, 전신마사지, 손발톱, 헤드스파, 귀청소
             </div>
-            <div class="card-note">네일 가능</div>
+            <div class="card-note">
+              &#128205; 156 B&#7841;ch &#272;&#7857;ng, H&#7843;i Ch&acirc;u
+              &middot; 500,000VND/1인
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=88+Barbershop+156+Bach+Dang+Da+Nang"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
           <div class="guide-card massage-card">
             <div class="card-icon">&#128134;</div>
+            <span class="card-location loc-danang">다낭</span>
             <div class="card-category">헤드스파</div>
             <h3>레비닌 스파 / 퀸즈 살롱</h3>
             <div class="card-menu">헤드스파 전문</div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Levinin+Spa+Da+Nang"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
+          </div>
+          <div class="guide-card massage-card">
+            <div class="card-icon">&#128675;</div>
+            <span class="card-location loc-hoian">호이안</span>
+            <div class="card-category">액티비티</div>
+            <h3>행코코넛 바구니배</h3>
+            <div class="card-menu">
+              캄탄 코코넛 빌리지 &middot; 200,000VND + 90,000VND(차량)
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Cam+Thanh+Coconut+Village+Basket+Boat+Hoi+An"
+              target="_blank"
+              rel="noopener"
+              class="card-map-link"
+              >&#128205; 지도 보기</a
+            >
           </div>
         </div>
       </div>
@@ -1815,11 +2123,104 @@
         </div>
       </div>
 
-      <div class="guide-section">
-        <h2>&#9989; 출발 전 체크리스트</h2>
-        <p class="section-sub">출발 전에 꼭 확인하세요</p>
+      <!-- 예약 정보 -->
+      <div id="booking" class="guide-section">
+        <h2>&#128203; 예약 정보</h2>
+        <p class="section-sub">확정된 예약 한눈에 보기</p>
+        <div class="guide-grid">
+          <div class="guide-card">
+            <div class="card-icon">&#9992;&#65039;</div>
+            <div class="card-category">항공</div>
+            <h3>티웨이항공</h3>
+            <div class="card-menu">
+              예약코드: MGLJU2<br />&#9992; TW-7: 07:55~10:45 (출국)<br />&#9992;
+              TW-8: 11:45~18:25 (입국)
+            </div>
+          </div>
+          <div class="guide-card massage-card">
+            <div class="card-icon">&#127807;</div>
+            <div class="card-category">스파</div>
+            <h3>콩스파</h3>
+            <div class="card-menu">DAY 1 &middot; 17:00</div>
+          </div>
+          <div class="guide-card massage-card">
+            <div class="card-icon">&#128134;</div>
+            <div class="card-category">이발관</div>
+            <h3>88이발관 &middot; 90분 풀코스</h3>
+            <div class="card-menu">
+              DAY 2 &middot; 20:00 &middot; 500,000VND/1인
+            </div>
+          </div>
+          <div class="guide-card massage-card">
+            <div class="card-icon">&#127807;</div>
+            <div class="card-category">스파</div>
+            <h3>논스파 &middot; 90분</h3>
+            <div class="card-menu">
+              DAY 3 &middot; 16:00 &middot; 650,000VND/1인
+            </div>
+          </div>
+          <div class="guide-card massage-card">
+            <div class="card-icon">&#127807;</div>
+            <div class="card-category">스파</div>
+            <h3>화이트오키드 &middot; 시그니처 60분</h3>
+            <div class="card-menu">
+              DAY 4 &middot; 7:50 픽업 &middot; 500,000VND/1인
+            </div>
+          </div>
+          <div class="guide-card">
+            <div class="card-icon">&#128675;</div>
+            <div class="card-category">액티비티</div>
+            <h3>행코코넛 바구니배</h3>
+            <div class="card-menu">
+              DAY 3 &middot; 14:00 &middot; 200,000VND + 90,000VND(차량)
+            </div>
+          </div>
+          <div class="guide-card">
+            <div class="card-icon">&#128188;</div>
+            <div class="card-category">패스트트랙</div>
+            <h3>베트남플레이</h3>
+            <div class="card-menu">55,800원 (2인)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 준비물 체크리스트 -->
+      <div id="packing" class="guide-section">
+        <h2>&#127890; 준비물 체크리스트</h2>
+        <p class="section-sub">하나도 빠뜨리지 말자!</p>
       </div>
       <div class="checklist-section">
+        <h3
+          style="
+            font-size: 0.85rem;
+            color: var(--day1);
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+          "
+        >
+          &#11088; 필수
+        </h3>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>여권</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>충전기 (+C타입 잭)</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>보조배터리</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>달러</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>보조가방 (크로스백)</span>
+        </div>
         <div class="check-item" onclick="this.classList.toggle('checked')">
           <div class="check-icon">&#10003;</div>
           <span>이심 (eSIM) 준비</span>
@@ -1831,6 +2232,150 @@
         <div class="check-item" onclick="this.classList.toggle('checked')">
           <div class="check-icon">&#10003;</div>
           <span>여행자보험 가입</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>바우처 출력/저장</span>
+        </div>
+
+        <h3
+          style="
+            font-size: 0.85rem;
+            color: var(--day2);
+            margin: 20px 0 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+          "
+        >
+          &#128087; 의류
+        </h3>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>1일차 옷</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>2일차 옷</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>3일차 옷</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>4일차 옷</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>잠옷</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>속옷</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>양말</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>수영복</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>신발</span>
+        </div>
+
+        <h3
+          style="
+            font-size: 0.85rem;
+            color: var(--day3);
+            margin: 20px 0 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+          "
+        >
+          &#128166; 샤워용품
+        </h3>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>클렌징밤 / 클렌징폼</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>샴푸 / 트리트먼트</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>바디워시 / 바디볼</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>스킨 / 로션 / 바디로션</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>칫솔 / 치약</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>화장솜 / 빗</span>
+        </div>
+
+        <h3
+          style="
+            font-size: 0.85rem;
+            color: #c9a227;
+            margin: 20px 0 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+          "
+        >
+          &#128188; 기타
+        </h3>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>선글라스</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>선풍기 / 선크림 / 선스틱</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>물티슈 / 티슈 / 비데티슈</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>마스크</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>고데기</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>샤워티슈</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>파우치 (렌즈통 필수!)</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>리뉴</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>나무젓가락</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>메쉬파우치</span>
+        </div>
+        <div class="check-item" onclick="this.classList.toggle('checked')">
+          <div class="check-icon">&#10003;</div>
+          <span>소화제 / 타이레놀 / 밴드</span>
         </div>
       </div>
     </div>
