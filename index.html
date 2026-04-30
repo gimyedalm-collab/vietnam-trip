@@ -28,6 +28,12 @@
       content="https://gimyedalm-collab.github.io/vietnam-trip/img/og-image.jpg"
     />
     <title>달동이의 베트남 여행</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#e8985e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="베트남여행">
+    <link rel="apple-touch-icon" href="img/icon.svg">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400;700&display=swap');
       :root {
@@ -3206,6 +3212,11 @@
           w.innerHTML = '\u2600\uFE0F 다낭 5월 | 29~34\u00B0C | \uD83C\uDF27\uFE0F 가끔 소나기 | \uD83D\uDCA6 습도 높음';
         }
       })();
+
+      // Service Worker registration
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      }
     </script>
   </body>
 </html>

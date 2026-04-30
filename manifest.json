@@ -1,0 +1,18 @@
+{
+  "name": "달동이의 베트남 여행",
+  "short_name": "베트남여행",
+  "description": "Da Nang & Hoi An · 2026.05.07 ~ 05.10",
+  "start_url": "/vietnam-trip/",
+  "display": "standalone",
+  "background_color": "#1a0f00",
+  "theme_color": "#e8985e",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "img/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
