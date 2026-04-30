@@ -2901,7 +2901,7 @@
         <div class="sos-card"><h3>&#128658; 긴급 전화번호</h3><p><span class="sos-num">113</span> 경찰</p><p><span class="sos-num">114</span> 소방</p><p><span class="sos-num">115</span> 응급 (앰뷸런스)</p></div>
         <div class="sos-card"><h3>&#127470;&#127479; 주 베트남 한국대사관</h3><p>긴급: <a href="tel:+84-24-3831-5110">+84-24-3831-5110</a></p><p>영사콜센터 (24시간): <a href="tel:+82-2-3210-0404">+82-2-3210-0404</a></p></div>
         <div class="sos-card"><h3>&#127973; 다낭 추천 병원</h3><p>패밀리 메디컬 프랙티스 다낭</p><p><a href="tel:+84-236-3582-699">+84-236-3582-699</a></p><p style="font-size:.75rem;color:#999;margin-top:4px">영어 가능, 여행자보험 청구 지원</p></div>
-        <div class="sos-card"><h3>&#128737; 여행자보험</h3><p>보험사 연락처를 여기에 메모하세요</p><p style="font-size:.75rem;color:#999">증권번호: ________________</p><p style="font-size:.75rem;color:#999">연락처: ________________</p></div>
+        <div class="sos-card"><h3>&#128737; 여행자보험</h3><p style="font-size:.82rem;color:#666;margin-bottom:10px">보험사 정보를 입력하면 자동 저장됩니다</p><div style="margin-bottom:8px"><label style="font-size:.72rem;font-weight:700;color:#888;display:block;margin-bottom:4px">증권번호</label><input type="text" id="sos-policy" placeholder="증권번호 입력" style="width:100%;padding:10px 12px;border:2px solid #e0d5c7;border-radius:10px;font-size:.88rem;font-family:'Noto Sans KR',sans-serif;outline:none;transition:.2s" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='#e0d5c7'"></div><div style="margin-bottom:8px"><label style="font-size:.72rem;font-weight:700;color:#888;display:block;margin-bottom:4px">보험사 연락처</label><input type="tel" id="sos-phone" placeholder="보험사 전화번호 입력" style="width:100%;padding:10px 12px;border:2px solid #e0d5c7;border-radius:10px;font-size:.88rem;font-family:'Noto Sans KR',sans-serif;outline:none;transition:.2s" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='#e0d5c7'"></div><div><label style="font-size:.72rem;font-weight:700;color:#888;display:block;margin-bottom:4px">메모</label><input type="text" id="sos-memo" placeholder="보험사명, 보장내용 등" style="width:100%;padding:10px 12px;border:2px solid #e0d5c7;border-radius:10px;font-size:.88rem;font-family:'Noto Sans KR',sans-serif;outline:none;transition:.2s" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='#e0d5c7'"></div><p id="sos-save-status" style="font-size:.68rem;color:var(--accent);margin-top:8px;text-align:center;opacity:0;transition:.3s">&#10003; 저장됨</p></div>
         <div class="sos-card"><h3>&#128222; 유용한 팁</h3><p style="font-size:.82rem;color:#666;line-height:1.8">&middot; 베트남에서 한국 112/119는 안 됩니다<br>&middot; 그랩(Grab) 앱으로 택시 이동이 가장 안전<br>&middot; 여권 사본을 폰에 사진으로 저장해두세요<br>&middot; 호텔 주소를 베트남어로 캡처해두면 편해요</p></div>
       </div>
     </div>
@@ -3121,6 +3121,24 @@
 
       // Hide standalone pages on load
       ['viet-page','sos-page'].forEach(id => { const el = document.getElementById(id); if(el) el.style.display = 'none'; });
+
+      // SOS insurance info - localStorage
+      (function() {
+        const fields = ['sos-policy','sos-phone','sos-memo'];
+        const saved = JSON.parse(localStorage.getItem('vt-sos') || '{}');
+        fields.forEach(id => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          if (saved[id]) el.value = saved[id];
+          el.addEventListener('input', function() {
+            const data = {};
+            fields.forEach(f => { data[f] = document.getElementById(f).value; });
+            localStorage.setItem('vt-sos', JSON.stringify(data));
+            const status = document.getElementById('sos-save-status');
+            if (status) { status.style.opacity = '1'; setTimeout(() => status.style.opacity = '0', 1500); }
+          });
+        });
+      })();
 
       // Live Weather - Open-Meteo API (Da Nang)
       (async function() {
