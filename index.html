@@ -3,15 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="달동이의 베트남 여행">
-    <meta property="og:description" content="Da Nang & Hoi An · 2026.05.07 ~ 05.10">
-    <meta property="og:image" content="https://gimyedalm-collab.github.io/vietnam-trip/img/og-image.jpg">
-    <meta property="og:url" content="https://gimyedalm-collab.github.io/vietnam-trip/">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="달동이의 베트남 여행">
-    <meta name="twitter:description" content="Da Nang & Hoi An · 2026.05.07 ~ 05.10">
-    <meta name="twitter:image" content="https://gimyedalm-collab.github.io/vietnam-trip/img/og-image.jpg">
+    <meta property="og:title" content="달동이의 베트남 여행" />
+    <meta
+      property="og:description"
+      content="Da Nang & Hoi An · 2026.05.07 ~ 05.10"
+    />
+    <meta
+      property="og:image"
+      content="https://gimyedalm-collab.github.io/vietnam-trip/img/og-image.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://gimyedalm-collab.github.io/vietnam-trip/"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="달동이의 베트남 여행" />
+    <meta
+      name="twitter:description"
+      content="Da Nang & Hoi An · 2026.05.07 ~ 05.10"
+    />
+    <meta
+      name="twitter:image"
+      content="https://gimyedalm-collab.github.io/vietnam-trip/img/og-image.jpg"
+    />
     <title>달동이의 베트남 여행</title>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400;700&display=swap');
@@ -703,216 +718,524 @@
           height: 40px;
         }
       }
-    
-    .photo-strip{background:#3e2723;padding:40px 0;overflow:hidden}
-    .photo-track{display:flex;gap:20px;animation:photoScroll 30s linear infinite;width:max-content}
-    .photo-track img{width:200px;height:260px;object-fit:cover;border-radius:8px;flex-shrink:0;opacity:.85;transition:.3s}
-    .photo-track img:hover{opacity:1;transform:scale(1.03)}
-    @keyframes photoScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-    .hero-photo{position:absolute;width:200px;height:260px;border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);border:3px solid rgba(255,255,255,.1);z-index:2;opacity:0;animation:photoIn 1.2s ease forwards}
-    .hero-photo img{width:100%;height:100%;object-fit:cover}
-    .hero-photo:nth-child(1){left:6%;top:50%;transform:rotate(-7deg);animation-delay:.3s}
-    .hero-photo:nth-child(2){right:6%;top:45%;transform:rotate(5deg);animation-delay:.6s}
-    @keyframes photoIn{to{opacity:.65}}
-    .day-nav{border-top:3px solid #da251d !important}
-    footer{position:relative;overflow:hidden}
-    footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#da251d,#ffff00,#da251d)}
-    footer .caveat{font-family:Caveat,cursive;font-size:1.3rem;color:rgba(255,255,255,.5);margin-top:16px}
-    .timeline::before{left:76px !important}
-    .tl-item{padding-left:105px !important}
-    .tl-time{left:0 !important;width:64px !important;text-align:right !important;padding-right:8px}
-    .tl-time span{font-size:.92rem !important;font-weight:800 !important;color:#4a3728 !important}
-    .tl-dot{left:71px !important}
-    @media(max-width:768px){
-      .hero-photo{width:130px !important;height:170px !important}.hero-photo:nth-child(1){left:2% !important}.hero-photo:nth-child(2){right:2% !important}
-      .photo-track img{width:150px;height:200px}
-      .timeline::before{left:58px !important}.tl-item{padding-left:82px !important}.tl-dot{left:53px !important}
-      .tl-time{width:48px !important}.tl-time span{font-size:.8rem !important}
-      .day-nav a{padding:12px 10px;font-size:.74rem}
-      .guide-grid{grid-template-columns:1fr}
-    }
-    @media(max-width:380px){
-      .hero-photo{display:none !important}
-      .timeline::before{left:48px !important}.tl-item{padding-left:70px !important}.tl-dot{left:43px !important}
-      .tl-time{width:40px !important}.tl-time span{font-size:.75rem !important}
-    }
 
-    
-    /* Mobile Preview Mode */
-    .preview-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 9999;
-      background: #da251d;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-size: .85rem;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 4px 16px rgba(0,0,0,.2);
-      font-family: 'Noto Sans KR', sans-serif;
-      transition: .2s;
-    }
-    .preview-toggle:hover { transform: scale(1.05); }
-    
-    body.mobile-preview {
-      background: #e8e8e8;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 40px 0;
-      min-height: 100vh;
-    }
-    body.mobile-preview .page-wrap {
-      width: 390px;
-      max-height: 844px;
-      overflow-y: auto;
-      overflow-x: hidden;
-      border-radius: 40px;
-      box-shadow: 0 20px 80px rgba(0,0,0,.25);
-      border: 8px solid #1a1a1a;
-      position: relative;
-      background: var(--warm-bg, #fdf8f0);
-    }
-    body.mobile-preview .page-wrap::before {
-      content: '';
-      position: sticky;
-      top: 0;
-      display: block;
-      width: 120px;
-      height: 28px;
-      background: #1a1a1a;
-      border-radius: 0 0 16px 16px;
-      margin: 0 auto;
-      z-index: 9998;
-    }
-    body.mobile-preview .preview-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-    }
-    body.mobile-preview .day-nav,
-    body.mobile-preview .dn {
-      position: relative !important;
-    }
-
-    
-    
-    .hero-title, .hero h1 {
-      word-break: keep-all !important;
-      overflow-wrap: normal !important;
-      white-space: normal !important;
-    }
-    .hero-title span {
-      display: inline !important;
-      white-space: nowrap !important;
-    }
-
-    /* ===== FINAL MOBILE POLISH ===== */
-    @media (max-width: 768px) {
-      .hero { min-height: 100vh; min-height: 100dvh; }
-      .hero-content, .hc { padding: 0 24px !important; }
-      .hero-sub, .hero .hero-sub { font-size: .95rem !important; letter-spacing: 2px !important; margin-bottom: 12px !important; }
-      .hero-title, .hero h1 { font-size: 2rem !important; line-height: 1.3 !important; word-break: keep-all !important; }
-      .hero-title span { display: inline !important; }
-      .hero-date { font-size: .85rem !important; letter-spacing: 2px !important; margin-bottom: 24px !important; flex-wrap: wrap; justify-content: center; display: flex; align-items: center; gap: 4px; }
-      .hero-date svg { width: 32px !important; height: 22px !important; margin: 0 4px !important; }
-      .hero-badge, .hero .hb { font-size: .7rem !important; padding: 8px 18px !important; letter-spacing: 1.5px !important; }
-      .hero-heart { font-size: 1.5rem !important; }
-      .scroll-hint { font-size: .65rem !important; bottom: 16px !important; }
-
-      .photo-strip { padding: 24px 0 !important; }
-      .photo-track { gap: 12px !important; }
-      .photo-track img { width: 140px !important; height: 185px !important; border-radius: 6px !important; }
-
-      .day-nav a { padding: 12px 8px !important; font-size: .72rem !important; letter-spacing: 0 !important; }
-
-      .rule-box { margin: 40px 16px !important; padding: 24px 18px !important; }
-      .rule-box::before { font-size: .7rem !important; padding: 4px 16px !important; top: -12px !important; }
-      .rule-box p { font-size: .85rem !important; line-height: 1.8 !important; word-break: keep-all !important; }
-
-      .section-header { padding: 50px 16px 24px !important; }
-      .section-header h2, .sh h2 { font-size: 1.5rem !important; }
-      .section-header p, .sh .su, .section-header .sub { font-size: .82rem !important; }
-      .day-badge { font-size: .7rem !important; padding: 6px 18px !important; }
-      .section-deco { font-size: 1.3rem !important; }
-
-      .timeline { padding: 0 12px 40px !important; max-width: 100% !important; }
-      .tl-card h3, .tc h3 { font-size: .9rem !important; line-height: 1.4 !important; word-break: keep-all !important; }
-      .tl-card p, .tc p { font-size: .8rem !important; line-height: 1.5 !important; word-break: keep-all !important; }
-      .tl-tag { font-size: .62rem !important; padding: 2px 7px !important; }
-
-      .guide-section { padding: 30px 12px 40px !important; }
-      .guide-section h2 { font-size: 1.4rem !important; }
-      .section-sub, .ssb { font-size: .8rem !important; margin-bottom: 24px !important; }
-      .guide-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
-      .guide-card, .gc { padding: 18px !important; }
-      .guide-card h3, .gc h3 { font-size: .95rem !important; }
-      .card-menu, .cm { font-size: .8rem !important; }
-      .card-note, .cn { font-size: .72rem !important; }
-
-      .checklist-section, .cls { padding: 0 12px 40px !important; }
-      .check-item, .ck { padding: 12px 14px !important; font-size: .83rem !important; }
-
-      footer { padding: 40px 20px !important; }
-      footer p { font-size: .8rem !important; word-break: keep-all !important; }
-      footer .caveat, footer .cv { font-size: 1rem !important; }
-
-      /* Mobile preview frame adjustments */
-      body.mobile-preview .page-wrap { 
-        width: 375px; max-height: 812px; 
+      .photo-strip {
+        background: #3e2723;
+        padding: 40px 0;
+        overflow: hidden;
       }
-    }
+      .photo-track {
+        display: flex;
+        gap: 20px;
+        animation: photoScroll 30s linear infinite;
+        width: max-content;
+      }
+      .photo-track img {
+        width: 200px;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 8px;
+        flex-shrink: 0;
+        opacity: 0.85;
+        transition: 0.3s;
+      }
+      .photo-track img:hover {
+        opacity: 1;
+        transform: scale(1.03);
+      }
+      @keyframes photoScroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .hero-photo {
+        position: absolute;
+        width: 200px;
+        height: 260px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        border: 3px solid rgba(255, 255, 255, 0.1);
+        z-index: 2;
+        opacity: 0;
+        animation: photoIn 1.2s ease forwards;
+      }
+      .hero-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .hero-photo:nth-child(1) {
+        left: 6%;
+        top: 50%;
+        transform: rotate(-7deg);
+        animation-delay: 0.3s;
+      }
+      .hero-photo:nth-child(2) {
+        right: 6%;
+        top: 45%;
+        transform: rotate(5deg);
+        animation-delay: 0.6s;
+      }
+      @keyframes photoIn {
+        to {
+          opacity: 0.65;
+        }
+      }
+      .day-nav {
+        border-top: 3px solid #da251d !important;
+      }
+      footer {
+        position: relative;
+        overflow: hidden;
+      }
+      footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #da251d, #ffff00, #da251d);
+      }
+      footer .caveat {
+        font-family: Caveat, cursive;
+        font-size: 1.3rem;
+        color: rgba(255, 255, 255, 0.5);
+        margin-top: 16px;
+      }
+      .timeline::before {
+        left: 76px !important;
+      }
+      .tl-item {
+        padding-left: 105px !important;
+      }
+      .tl-time {
+        left: 0 !important;
+        width: 64px !important;
+        text-align: right !important;
+        padding-right: 8px;
+      }
+      .tl-time span {
+        font-size: 0.92rem !important;
+        font-weight: 800 !important;
+        color: #4a3728 !important;
+      }
+      .tl-dot {
+        left: 71px !important;
+      }
+      @media (max-width: 768px) {
+        .hero-photo {
+          width: 130px !important;
+          height: 170px !important;
+        }
+        .hero-photo:nth-child(1) {
+          left: 2% !important;
+        }
+        .hero-photo:nth-child(2) {
+          right: 2% !important;
+        }
+        .photo-track img {
+          width: 150px;
+          height: 200px;
+        }
+        .timeline::before {
+          left: 58px !important;
+        }
+        .tl-item {
+          padding-left: 82px !important;
+        }
+        .tl-dot {
+          left: 53px !important;
+        }
+        .tl-time {
+          width: 48px !important;
+        }
+        .tl-time span {
+          font-size: 0.8rem !important;
+        }
+        .day-nav a {
+          padding: 12px 10px;
+          font-size: 0.74rem;
+        }
+        .guide-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 380px) {
+        .hero-photo {
+          display: none !important;
+        }
+        .timeline::before {
+          left: 48px !important;
+        }
+        .tl-item {
+          padding-left: 70px !important;
+        }
+        .tl-dot {
+          left: 43px !important;
+        }
+        .tl-time {
+          width: 40px !important;
+        }
+        .tl-time span {
+          font-size: 0.75rem !important;
+        }
+      }
 
-    @media (max-width: 420px) {
-      .hero-title, .hero h1 { font-size: 1.75rem !important; }
-      .hero-date svg { width: 28px !important; height: 19px !important; }
-      .timeline::before { left: 52px !important; }
-      .tl-item { padding-left: 74px !important; }
-      .tl-dot { left: 47px !important; width: 10px !important; height: 10px !important; }
-      .tl-time { width: 42px !important; }
-      .tl-time span { font-size: .75rem !important; }
-      .tl-card { padding: 14px !important; border-radius: 10px !important; }
-      .day-nav a { padding: 11px 6px !important; font-size: .68rem !important; }
-      body.mobile-preview .page-wrap { width: 340px; max-height: 740px; }
-    }
+      /* Mobile Preview Mode */
+      .preview-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        background: #da251d;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        font-family: 'Noto Sans KR', sans-serif;
+        transition: 0.2s;
+      }
+      .preview-toggle:hover {
+        transform: scale(1.05);
+      }
 
-    /* ===== FINAL DESIGN TOUCHES ===== */
-    .hero { background: linear-gradient(180deg, #1a0f00 0%, #2d1a0a 35%, #4a2c17 65%, #6d3f1f 100%) !important; }
-    
-    .rule-box {
-      background: linear-gradient(135deg, #fffbf2, #fff5e1) !important;
-      border: 2px solid #e8c170 !important;
-      box-shadow: 0 8px 32px rgba(232,193,112,.12) !important;
-    }
+      body.mobile-preview {
+        background: #e8e8e8;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 40px 0;
+        min-height: 100vh;
+      }
+      body.mobile-preview .page-wrap {
+        width: 390px;
+        max-height: 844px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border-radius: 40px;
+        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.25);
+        border: 8px solid #1a1a1a;
+        position: relative;
+        background: var(--warm-bg, #fdf8f0);
+      }
+      body.mobile-preview .page-wrap::before {
+        content: '';
+        position: sticky;
+        top: 0;
+        display: block;
+        width: 120px;
+        height: 28px;
+        background: #1a1a1a;
+        border-radius: 0 0 16px 16px;
+        margin: 0 auto;
+        z-index: 9998;
+      }
+      body.mobile-preview .preview-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+      }
+      body.mobile-preview .day-nav,
+      body.mobile-preview .dn {
+        position: relative !important;
+      }
 
-    .tl-card { 
-      border-radius: 16px !important; 
-      box-shadow: 0 2px 16px rgba(0,0,0,.04) !important; 
-    }
-    .tl-card:hover { 
-      box-shadow: 0 8px 32px rgba(0,0,0,.08) !important; 
-    }
+      .hero-title,
+      .hero h1 {
+        word-break: keep-all !important;
+        overflow-wrap: normal !important;
+        white-space: normal !important;
+      }
+      .hero-title span {
+        display: inline !important;
+        white-space: nowrap !important;
+      }
 
-    .guide-card {
-      border-radius: 16px !important;
-      transition: transform .25s, box-shadow .25s !important;
-    }
+      /* ===== FINAL MOBILE POLISH ===== */
+      @media (max-width: 768px) {
+        .hero {
+          min-height: 100vh;
+          min-height: 100dvh;
+        }
+        .hero-content,
+        .hc {
+          padding: 0 24px !important;
+        }
+        .hero-sub,
+        .hero .hero-sub {
+          font-size: 0.95rem !important;
+          letter-spacing: 2px !important;
+          margin-bottom: 12px !important;
+        }
+        .hero-title,
+        .hero h1 {
+          font-size: 2rem !important;
+          line-height: 1.3 !important;
+          word-break: keep-all !important;
+        }
+        .hero-title span {
+          display: inline !important;
+        }
+        .hero-date {
+          font-size: 0.85rem !important;
+          letter-spacing: 2px !important;
+          margin-bottom: 24px !important;
+          flex-wrap: wrap;
+          justify-content: center;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+        }
+        .hero-date svg {
+          width: 32px !important;
+          height: 22px !important;
+          margin: 0 4px !important;
+        }
+        .hero-badge,
+        .hero .hb {
+          font-size: 0.7rem !important;
+          padding: 8px 18px !important;
+          letter-spacing: 1.5px !important;
+        }
+        .hero-heart {
+          font-size: 1.5rem !important;
+        }
+        .scroll-hint {
+          font-size: 0.65rem !important;
+          bottom: 16px !important;
+        }
 
-    /* Smooth scroll */
-    html { scroll-behavior: smooth; }
+        .photo-strip {
+          padding: 24px 0 !important;
+        }
+        .photo-track {
+          gap: 12px !important;
+        }
+        .photo-track img {
+          width: 140px !important;
+          height: 185px !important;
+          border-radius: 6px !important;
+        }
 
-    /* Better scrollbar for mobile preview */
-    body.mobile-preview .page-wrap::-webkit-scrollbar { width: 0; }
-    body.mobile-preview .page-wrap { scrollbar-width: none; }
+        .day-nav a {
+          padding: 12px 8px !important;
+          font-size: 0.72rem !important;
+          letter-spacing: 0 !important;
+        }
 
+        .rule-box {
+          margin: 40px 16px !important;
+          padding: 24px 18px !important;
+        }
+        .rule-box::before {
+          font-size: 0.7rem !important;
+          padding: 4px 16px !important;
+          top: -12px !important;
+        }
+        .rule-box p {
+          font-size: 0.85rem !important;
+          line-height: 1.8 !important;
+          word-break: keep-all !important;
+        }
+
+        .section-header {
+          padding: 50px 16px 24px !important;
+        }
+        .section-header h2,
+        .sh h2 {
+          font-size: 1.5rem !important;
+        }
+        .section-header p,
+        .sh .su,
+        .section-header .sub {
+          font-size: 0.82rem !important;
+        }
+        .day-badge {
+          font-size: 0.7rem !important;
+          padding: 6px 18px !important;
+        }
+        .section-deco {
+          font-size: 1.3rem !important;
+        }
+
+        .timeline {
+          padding: 0 12px 40px !important;
+          max-width: 100% !important;
+        }
+        .tl-card h3,
+        .tc h3 {
+          font-size: 0.9rem !important;
+          line-height: 1.4 !important;
+          word-break: keep-all !important;
+        }
+        .tl-card p,
+        .tc p {
+          font-size: 0.8rem !important;
+          line-height: 1.5 !important;
+          word-break: keep-all !important;
+        }
+        .tl-tag {
+          font-size: 0.62rem !important;
+          padding: 2px 7px !important;
+        }
+
+        .guide-section {
+          padding: 30px 12px 40px !important;
+        }
+        .guide-section h2 {
+          font-size: 1.4rem !important;
+        }
+        .section-sub,
+        .ssb {
+          font-size: 0.8rem !important;
+          margin-bottom: 24px !important;
+        }
+        .guide-grid {
+          grid-template-columns: 1fr !important;
+          gap: 12px !important;
+        }
+        .guide-card,
+        .gc {
+          padding: 18px !important;
+        }
+        .guide-card h3,
+        .gc h3 {
+          font-size: 0.95rem !important;
+        }
+        .card-menu,
+        .cm {
+          font-size: 0.8rem !important;
+        }
+        .card-note,
+        .cn {
+          font-size: 0.72rem !important;
+        }
+
+        .checklist-section,
+        .cls {
+          padding: 0 12px 40px !important;
+        }
+        .check-item,
+        .ck {
+          padding: 12px 14px !important;
+          font-size: 0.83rem !important;
+        }
+
+        footer {
+          padding: 40px 20px !important;
+        }
+        footer p {
+          font-size: 0.8rem !important;
+          word-break: keep-all !important;
+        }
+        footer .caveat,
+        footer .cv {
+          font-size: 1rem !important;
+        }
+
+        /* Mobile preview frame adjustments */
+        body.mobile-preview .page-wrap {
+          width: 375px;
+          max-height: 812px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .hero-title,
+        .hero h1 {
+          font-size: 1.75rem !important;
+        }
+        .hero-date svg {
+          width: 28px !important;
+          height: 19px !important;
+        }
+        .timeline::before {
+          left: 52px !important;
+        }
+        .tl-item {
+          padding-left: 74px !important;
+        }
+        .tl-dot {
+          left: 47px !important;
+          width: 10px !important;
+          height: 10px !important;
+        }
+        .tl-time {
+          width: 42px !important;
+        }
+        .tl-time span {
+          font-size: 0.75rem !important;
+        }
+        .tl-card {
+          padding: 14px !important;
+          border-radius: 10px !important;
+        }
+        .day-nav a {
+          padding: 11px 6px !important;
+          font-size: 0.68rem !important;
+        }
+        body.mobile-preview .page-wrap {
+          width: 340px;
+          max-height: 740px;
+        }
+      }
+
+      /* ===== FINAL DESIGN TOUCHES ===== */
+      .hero {
+        background: linear-gradient(
+          180deg,
+          #1a0f00 0%,
+          #2d1a0a 35%,
+          #4a2c17 65%,
+          #6d3f1f 100%
+        ) !important;
+      }
+
+      .rule-box {
+        background: linear-gradient(135deg, #fffbf2, #fff5e1) !important;
+        border: 2px solid #e8c170 !important;
+        box-shadow: 0 8px 32px rgba(232, 193, 112, 0.12) !important;
+      }
+
+      .tl-card {
+        border-radius: 16px !important;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04) !important;
+      }
+      .tl-card:hover {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+      }
+
+      .guide-card {
+        border-radius: 16px !important;
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s !important;
+      }
+
+      /* Smooth scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Better scrollbar for mobile preview */
+      body.mobile-preview .page-wrap::-webkit-scrollbar {
+        width: 0;
+      }
+      body.mobile-preview .page-wrap {
+        scrollbar-width: none;
+      }
     </style>
   </head>
   <body>
-
     <section class="hero">
       <div class="lanterns">
         <div class="lantern"></div>
@@ -924,14 +1247,98 @@
         <div class="lantern"></div>
       </div>
       <div class="hero-content">
-        <p class="hero-sub" style="font-family:Caveat,cursive">Xin chào, Việt Nam!</p>
-        <h1 class="hero-title"><span>달동이의</span><br>베트남 여행</h1>
-        <p class="hero-date"><svg viewBox="0 0 30 20" width="44" height="30" style="border-radius:3px;box-shadow:0 2px 8px rgba(0,0,0,.35);vertical-align:middle;margin:0 8px"><rect width="30" height="20" fill="#da251d"/><path d="M15 3.5l1.8 5.5h5.8l-4.7 3.4 1.8 5.5L15 14.5l-4.7 3.4 1.8-5.5-4.7-3.4h5.8z" fill="#ffff00"/></svg> 2026. 05. 07 — 05. 10 <svg viewBox="0 0 30 20" width="44" height="30" style="border-radius:3px;box-shadow:0 2px 8px rgba(0,0,0,.35);vertical-align:middle;margin:0 8px"><rect width="30" height="20" fill="#da251d"/><path d="M15 3.5l1.8 5.5h5.8l-4.7 3.4 1.8 5.5L15 14.5l-4.7 3.4 1.8-5.5-4.7-3.4h5.8z" fill="#ffff00"/></svg></p>
+        <p class="hero-sub" style="font-family: Caveat, cursive">
+          Xin chào, Việt Nam!
+        </p>
+        <h1 class="hero-title"><span>달동이의</span><br />베트남 여행</h1>
+        <p class="hero-date">
+          <svg
+            viewBox="0 0 30 20"
+            width="44"
+            height="30"
+            style="
+              border-radius: 3px;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+              vertical-align: middle;
+              margin: 0 8px;
+            "
+          >
+            <rect width="30" height="20" fill="#da251d" />
+            <path
+              d="M15 3.5l1.8 5.5h5.8l-4.7 3.4 1.8 5.5L15 14.5l-4.7 3.4 1.8-5.5-4.7-3.4h5.8z"
+              fill="#ffff00"
+            />
+          </svg>
+          2026. 05. 07 — 05. 10
+          <svg
+            viewBox="0 0 30 20"
+            width="44"
+            height="30"
+            style="
+              border-radius: 3px;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+              vertical-align: middle;
+              margin: 0 8px;
+            "
+          >
+            <rect width="30" height="20" fill="#da251d" />
+            <path
+              d="M15 3.5l1.8 5.5h5.8l-4.7 3.4 1.8 5.5L15 14.5l-4.7 3.4 1.8-5.5-4.7-3.4h5.8z"
+              fill="#ffff00"
+            />
+          </svg>
+        </p>
         <div class="hero-heart">&#10084;&#65039;</div>
       </div>
       <div class="scroll-hint">SCROLL</div>
     </section>
-<div class="photo-strip"><div class="photo-track"><img src="img/KakaoTalk_20260429_174018037_05.jpg" alt=""><img src="img/KakaoTalk_20260429_164211878.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_04.jpg" alt=""><img src="img/KakaoTalk_20260429_164529884.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_02.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_03.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_01.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_01.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_02.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_03.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_04.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_05.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_05.jpg" alt=""><img src="img/KakaoTalk_20260429_164211878.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_04.jpg" alt=""><img src="img/KakaoTalk_20260429_164529884.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_02.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_03.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_01.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037_01.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_02.jpg" alt=""><img src="img/KakaoTalk_20260429_174018037.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_03.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_04.jpg" alt=""><img src="img/KakaoTalk_20260429_165305285_05.jpg" alt=""></div></div>
+    <div class="photo-strip">
+      <div class="photo-track">
+        <img src="img/KakaoTalk_20260429_174018037_05.jpg" alt="" /><img
+          src="img/KakaoTalk_20260429_164211878.jpg"
+          alt=""
+        /><img src="img/KakaoTalk_20260429_174018037_04.jpg" alt="" /><img
+          src="img/KakaoTalk_20260429_164529884.jpg"
+          alt=""
+        /><img src="img/KakaoTalk_20260429_174018037_02.jpg" alt="" /><img
+          src="img/KakaoTalk_20260429_165305285.jpg"
+          alt=""
+        /><img src="img/KakaoTalk_20260429_174018037_03.jpg" alt="" /><img
+          src="img/KakaoTalk_20260429_165305285_01.jpg"
+          alt=""
+        /><img src="img/KakaoTalk_20260429_174018037_01.jpg" alt="" /><img
+          src="img/KakaoTalk_20260429_165305285_02.jpg"
+          alt=""
+        /><img src="img/KakaoTalk_20260429_174018037.jpg" alt="" /><img
+          src="img/KakaoTalk_20260429_165305285_03.jpg"
+          alt=""
+        /><img src="img/KakaoTalk_20260429_165305285_04.jpg" alt="" /><img
+          src="img/KakaoTalk_20260429_165305285_05.jpg"
+          alt=""
+        /><img src="img/KakaoTalk_20260429_174018037_05.jpg" alt="" /><img
+          src="img/KakaoTalk_20260429_164211878.jpg"
+          alt=""
+        /><img src="img/KakaoTalk_20260429_174018037_04.jpg" alt="" /><img
+          src="img/KakaoTalk_20260429_164529884.jpg"
+          alt=""
+        /><img src="img/KakaoTalk_20260429_174018037_02.jpg" alt="" /><img
+          src="img/KakaoTalk_20260429_165305285.jpg"
+          alt=""
+        /><img src="img/KakaoTalk_20260429_174018037_03.jpg" alt="" /><img
+          src="img/KakaoTalk_20260429_165305285_01.jpg"
+          alt=""
+        /><img src="img/KakaoTalk_20260429_174018037_01.jpg" alt="" /><img
+          src="img/KakaoTalk_20260429_165305285_02.jpg"
+          alt=""
+        /><img src="img/KakaoTalk_20260429_174018037.jpg" alt="" /><img
+          src="img/KakaoTalk_20260429_165305285_03.jpg"
+          alt=""
+        /><img src="img/KakaoTalk_20260429_165305285_04.jpg" alt="" /><img
+          src="img/KakaoTalk_20260429_165305285_05.jpg"
+          alt=""
+        />
+      </div>
+    </div>
 
     <nav class="day-nav">
       <a href="#day1">DAY 1</a>
@@ -1432,24 +1839,68 @@
       <div class="footer-heart">&#10084;&#65039;</div>
       <p>
         <strong>달동이의 베트남 여행</strong><br />Da Nang &amp; Hoi An &middot;
-        2026.05.07 ~ 05.10<br /><br />행복한 여행 되자!</p>
-<p class="caveat">Hạnh phúc nha!<br><span style="font-size:.75rem;color:rgba(255,255,255,.35);font-family:Noto Sans KR,sans-serif;letter-spacing:1px">행복하자, 우리!</span>
+        2026.05.07 ~ 05.10<br /><br />행복한 여행 되자!
       </p>
-    
-    <div style="margin-top:48px;padding-top:36px;border-top:1px solid rgba(255,255,255,.06)">
-      <p style="font-family:'Noto Sans KR',sans-serif;font-size:.75rem;color:rgba(255,255,255,.25);letter-spacing:3px;margin-bottom:20px">TO. MY LOVE</p>
-      <p style="font-family:'Noto Sans KR',sans-serif;font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.6);line-height:2.4;letter-spacing:.3px;word-break:keep-all">
-        동휘야<br>
-        더 행복하고 더 사랑하자<br>
-        내가 더 노력할게<br><br>
-        <span style="font-size:1.2rem;font-weight:600;color:rgba(255,255,255,.8);letter-spacing:1px">사랑해 ❤️</span>
+      <p class="caveat">
+        Hạnh phúc nha!<br /><span
+          style="
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.35);
+            font-family:
+              Noto Sans KR,
+              sans-serif;
+            letter-spacing: 1px;
+          "
+          >행복하자, 우리!</span
+        >
       </p>
-    </div>
 
-  </footer>
+      <div
+        style="
+          margin-top: 48px;
+          padding-top: 36px;
+          border-top: 1px solid rgba(255, 255, 255, 0.06);
+        "
+      >
+        <p
+          style="
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.25);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+          "
+        >
+          TO. MY LOVE
+        </p>
+        <p
+          style="
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 2.4;
+            letter-spacing: 0.3px;
+            word-break: keep-all;
+          "
+        >
+          동휘야<br />
+          더 행복하고 더 사랑하자<br />
+          내가 더 노력할게<br /><br />
+          <span
+            style="
+              font-size: 1.2rem;
+              font-weight: 600;
+              color: rgba(255, 255, 255, 0.8);
+              letter-spacing: 1px;
+            "
+            >사랑해 ❤️</span
+          >
+        </p>
+      </div>
+    </footer>
 
-    
-  <script>
+    <script>
       const observer = new IntersectionObserver(
         (e) => {
           e.forEach((e) => {
@@ -1470,5 +1921,5 @@
         });
       });
     </script>
-</body>
+  </body>
 </html>
