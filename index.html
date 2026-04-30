@@ -315,6 +315,228 @@
         font-family: 'Noto Sans KR', sans-serif;
         transition: 0.2s;
       }
+      /* Countdown & Weather */
+      .countdown-wrap {
+        margin-top: 20px;
+        opacity: 0;
+        animation: fadeUp 1s 1.3s forwards;
+      }
+      .countdown-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 16px;
+        padding: 10px 24px;
+      }
+      .countdown-badge .d-day {
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: #ffd700;
+      }
+      .countdown-badge .d-label {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-left: 8px;
+      }
+      .weather-strip {
+        margin-top: 10px;
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: 0.5px;
+      }
+
+      /* Page Hero */
+      .page-hero {
+        padding: 40px 20px 20px;
+        text-align: center;
+        border-radius: 0 0 24px 24px;
+        margin-bottom: 10px;
+      }
+      .page-hero h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-bottom: 4px;
+      }
+      .page-hero p {
+        font-size: 0.82rem;
+        opacity: 0.8;
+      }
+      .page-hero-day1 {
+        background: linear-gradient(135deg, #e07a5f, #c9543d);
+        color: #fff;
+      }
+      .page-hero-day2 {
+        background: linear-gradient(135deg, #3d85c6, #2a5f8f);
+        color: #fff;
+      }
+      .page-hero-day3 {
+        background: linear-gradient(135deg, #81b29a, #2d6a4f);
+        color: #fff;
+      }
+      .page-hero-day4 {
+        background: linear-gradient(135deg, #f2cc8f, #c9a227);
+        color: #fff;
+      }
+      .page-hero-food {
+        background: linear-gradient(135deg, #e07a5f, #c9543d);
+        color: #fff;
+      }
+      .page-hero-spa {
+        background: linear-gradient(135deg, #81b29a, #2d6a4f);
+        color: #fff;
+      }
+      .page-hero-booking {
+        background: linear-gradient(135deg, #c9a227, #8b6914);
+        color: #fff;
+      }
+      .page-hero-packing {
+        background: linear-gradient(135deg, #3d85c6, #2a5f8f);
+        color: #fff;
+      }
+      .page-hero-viet {
+        background: linear-gradient(135deg, #da251d, #a01c15);
+        color: #fff;
+      }
+      .page-hero-sos {
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        color: #fff;
+      }
+
+      /* Calculator */
+      .calc-wrap {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .calc-input-group {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 12px;
+        align-items: center;
+      }
+      .calc-input {
+        flex: 1;
+        padding: 14px;
+        border: 2px solid #e0d5c7;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        font-family: 'Noto Sans KR', sans-serif;
+        text-align: right;
+        outline: none;
+        transition: 0.2s;
+      }
+      .calc-input:focus {
+        border-color: var(--primary);
+      }
+      .calc-label {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #888;
+        min-width: 40px;
+        text-align: center;
+      }
+      .calc-rate {
+        text-align: center;
+        font-size: 0.75rem;
+        color: #aaa;
+        margin-bottom: 16px;
+      }
+      .calc-presets {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+      }
+      .calc-preset {
+        padding: 8px 16px;
+        border: 1.5px solid #e0d5c7;
+        border-radius: 20px;
+        font-size: 0.78rem;
+        background: #fff;
+        cursor: pointer;
+        transition: 0.2s;
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+      .calc-preset:hover {
+        border-color: var(--primary);
+        background: rgba(232, 152, 94, 0.08);
+      }
+
+      /* Phrase card */
+      .phrase-grid {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      .phrase-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 18px;
+        background: #fff;
+        border-radius: 12px;
+        margin-bottom: 8px;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.03);
+      }
+      .phrase-ko {
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--dark);
+      }
+      .phrase-vn {
+        font-size: 0.88rem;
+        color: var(--day1);
+        font-weight: 500;
+        text-align: right;
+      }
+      .phrase-section-title {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--accent);
+        margin: 20px 16px 10px;
+        letter-spacing: 1px;
+      }
+
+      /* Emergency card */
+      .sos-grid {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      .sos-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 20px;
+        margin-bottom: 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      }
+      .sos-card h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--dark);
+      }
+      .sos-card a {
+        display: inline-block;
+        color: #3d85c6;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-top: 4px;
+      }
+      .sos-card p {
+        font-size: 0.82rem;
+        color: #666;
+        line-height: 1.6;
+      }
+      .sos-num {
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: var(--day1);
+        letter-spacing: 1px;
+      }
+
       .back-btn-float:hover {
         background: rgba(0, 0, 0, 0.85);
         transform: scale(1.05);
@@ -1427,6 +1649,16 @@
           </svg>
         </p>
         <div class="hero-heart">&#10084;&#65039;</div>
+        <div class="countdown-wrap">
+          <div class="countdown-badge">
+            <span class="d-day" id="dday">D-?</span
+            ><span class="d-label" id="dday-label"></span>
+          </div>
+          <div class="weather-strip">
+            &#9728;&#65039; 다낭 5월 | 29~34&#176;C | &#127783;&#65039; 가끔
+            소나기 | &#128166; 습도 높음
+          </div>
+        </div>
         <div class="quick-menu">
           <a onclick="showPage('day1')" class="qm-item"
             ><div class="qm-icon" style="background: var(--day1)">1</div>
@@ -1479,6 +1711,24 @@
               &#127890;
             </div>
             <span>준비물</span></a
+          >
+          <a onclick="showPage('viet-page')" class="qm-item"
+            ><div
+              class="qm-icon"
+              style="background: linear-gradient(135deg, #da251d, #a01c15)"
+            >
+              &#127466;&#127483;
+            </div>
+            <span>베트남어</span></a
+          >
+          <a onclick="showPage('sos-page')" class="qm-item"
+            ><div
+              class="qm-icon"
+              style="background: linear-gradient(135deg, #e74c3c, #c0392b)"
+            >
+              &#128680;
+            </div>
+            <span>긴급연락</span></a
           >
         </div>
       </div>
@@ -1545,6 +1795,10 @@
 
       <!-- DAY 1 -->
       <div id="day1">
+        <div class="page-hero page-hero-day1">
+          <h2>&#9992;&#65039; DAY 1</h2>
+          <p>5월 7일 (수) &middot; 다낭 도착</p>
+        </div>
         <div class="section-header">
           <div class="day-badge" style="background: var(--day1)">DAY 1</div>
           <h2>다낭 도착</h2>
@@ -1622,6 +1876,10 @@
 
       <!-- DAY 2 -->
       <div id="day2">
+        <div class="page-hero page-hero-day2">
+          <h2>&#127984; DAY 2</h2>
+          <p>5월 8일 (목) &middot; 바나힐 &amp; 다낭</p>
+        </div>
         <div class="section-header">
           <div class="day-badge" style="background: var(--day2)">DAY 2</div>
           <h2>바나힐 &amp; 다낭</h2>
@@ -1690,6 +1948,10 @@
 
       <!-- DAY 3 -->
       <div id="day3">
+        <div class="page-hero page-hero-day3">
+          <h2>&#127982; DAY 3</h2>
+          <p>5월 9일 (금) &middot; 호이안 올드타운</p>
+        </div>
         <div class="section-header">
           <div class="day-badge" style="background: var(--day3)">DAY 3</div>
           <h2>호이안</h2>
@@ -1792,6 +2054,10 @@
 
       <!-- DAY 4 -->
       <div id="day4">
+        <div class="page-hero page-hero-day4">
+          <h2>&#127748; DAY 4</h2>
+          <p>5월 10일 (토) &middot; 마지막 날 &amp; 귀국</p>
+        </div>
         <div class="section-header">
           <div class="day-badge" style="background: var(--day4)">DAY 4</div>
           <h2>마지막 날</h2>
@@ -2317,6 +2583,56 @@
             </div>
           </div>
         </div>
+        <h2 style="text-align: center; font-size: 1.3rem; margin: 40px 0 8px">
+          &#128177; 환율 계산기
+        </h2>
+        <p
+          class="section-sub"
+          style="
+            text-align: center;
+            color: #999;
+            font-size: 0.82rem;
+            margin-bottom: 20px;
+          "
+        >
+          원 &#8596; 동 간편 변환
+        </p>
+        <div class="calc-wrap">
+          <div class="calc-input-group">
+            <input
+              type="number"
+              class="calc-input"
+              id="calcKRW"
+              placeholder="원(KRW)"
+              oninput="calcToVND()"
+            />
+            <div class="calc-label">&#8594;</div>
+            <input
+              type="number"
+              class="calc-input"
+              id="calcVND"
+              placeholder="동(VND)"
+              oninput="calcToKRW()"
+            />
+          </div>
+          <div class="calc-rate">
+            1,000&#8361; &#8776; 17,800&#8363; (참고용)
+          </div>
+          <div class="calc-presets">
+            <button class="calc-preset" onclick="quickCalc(10000)">
+              1만원
+            </button>
+            <button class="calc-preset" onclick="quickCalc(30000)">
+              3만원
+            </button>
+            <button class="calc-preset" onclick="quickCalc(50000)">
+              5만원
+            </button>
+            <button class="calc-preset" onclick="quickCalc(100000)">
+              10만원
+            </button>
+          </div>
+        </div>
       </div>
 
       <div id="packing-page">
@@ -2516,7 +2832,48 @@
         </div>
       </div>
     </div>
-    <!-- /all-sections -->
+
+    <div id="viet-page">
+      <div class="page-hero page-hero-viet"><h2>&#127466;&#127483; 유용한 베트남어</h2><p>현지에서 바로 쓸 수 있는 필수 표현</p></div>
+      <div class="phrase-grid">
+        <div class="phrase-section-title">&#128075; 기본 인사</div>
+        <div class="phrase-item"><span class="phrase-ko">안녕하세요</span><span class="phrase-vn">Xin ch&agrave;o</span></div>
+        <div class="phrase-item"><span class="phrase-ko">감사합니다</span><span class="phrase-vn">C&#7843;m &#417;n</span></div>
+        <div class="phrase-item"><span class="phrase-ko">죄송합니다</span><span class="phrase-vn">Xin l&#7895;i</span></div>
+        <div class="phrase-item"><span class="phrase-ko">네 / 아니오</span><span class="phrase-vn">V&acirc;ng / Kh&ocirc;ng</span></div>
+        <div class="phrase-section-title">&#127860; 식당에서</div>
+        <div class="phrase-item"><span class="phrase-ko">얼마예요?</span><span class="phrase-vn">Bao nhi&ecirc;u ti&#7873;n?</span></div>
+        <div class="phrase-item"><span class="phrase-ko">계산이요</span><span class="phrase-vn">T&iacute;nh ti&#7873;n</span></div>
+        <div class="phrase-item"><span class="phrase-ko">맛있어요!</span><span class="phrase-vn">Ngon qu&aacute;!</span></div>
+        <div class="phrase-item"><span class="phrase-ko">맵지 않게 해주세요</span><span class="phrase-vn">Kh&ocirc;ng cay</span></div>
+        <div class="phrase-item"><span class="phrase-ko">고수 빼주세요</span><span class="phrase-vn">Kh&ocirc;ng r&#7855;c rau m&ugrave;i</span></div>
+        <div class="phrase-item"><span class="phrase-ko">물 주세요</span><span class="phrase-vn">Cho t&ocirc;i n&#432;&#7899;c</span></div>
+        <div class="phrase-item"><span class="phrase-ko">메뉴판 주세요</span><span class="phrase-vn">Cho t&ocirc;i xem menu</span></div>
+        <div class="phrase-section-title">&#128661; 이동/쇼핑</div>
+        <div class="phrase-item"><span class="phrase-ko">여기로 가주세요</span><span class="phrase-vn">&#272;i &#273;&#7871;n &#273;&acirc;y</span></div>
+        <div class="phrase-item"><span class="phrase-ko">할인해주세요</span><span class="phrase-vn">Gi&#7843;m gi&aacute; cho t&ocirc;i</span></div>
+        <div class="phrase-item"><span class="phrase-ko">너무 비싸요</span><span class="phrase-vn">&#272;&#7855;t qu&aacute;</span></div>
+        <div class="phrase-item"><span class="phrase-ko">화장실 어디예요?</span><span class="phrase-vn">Nh&agrave; v&#7879; sinh &#7903; &#273;&acirc;u?</span></div>
+        <div class="phrase-section-title">&#128680; 긴급 상황</div>
+        <div class="phrase-item"><span class="phrase-ko">도와주세요!</span><span class="phrase-vn">Gi&uacute;p t&ocirc;i v&#7899;i!</span></div>
+        <div class="phrase-item"><span class="phrase-ko">병원에 가야 해요</span><span class="phrase-vn">T&ocirc;i c&#7847;n &#273;i b&#7879;nh vi&#7879;n</span></div>
+        <div class="phrase-section-title">&#128173; 숫자</div>
+        <div class="phrase-item"><span class="phrase-ko">1 / 2 / 3</span><span class="phrase-vn">M&#7897;t / Hai / Ba</span></div>
+        <div class="phrase-item"><span class="phrase-ko">만 / 십만 / 백만</span><span class="phrase-vn">M&#432;&#7901;i ngh&igrave;n / Tr&#259;m ngh&igrave;n / Tri&#7879;u</span></div>
+      </div>
+    </div>
+
+    <div id="sos-page">
+      <div class="page-hero page-hero-sos"><h2>&#128680; 비상 연락처</h2><p>긴급 상황 시 바로 연락하세요</p></div>
+      <div class="sos-grid">
+        <div class="sos-card"><h3>&#128658; 긴급 전화번호</h3><p><span class="sos-num">113</span> 경찰</p><p><span class="sos-num">114</span> 소방</p><p><span class="sos-num">115</span> 응급 (앰뷸런스)</p></div>
+        <div class="sos-card"><h3>&#127470;&#127479; 주 베트남 한국대사관</h3><p>긴급: <a href="tel:+84-24-3831-5110">+84-24-3831-5110</a></p><p>영사콜센터 (24시간): <a href="tel:+82-2-3210-0404">+82-2-3210-0404</a></p></div>
+        <div class="sos-card"><h3>&#127973; 다낭 추천 병원</h3><p>패밀리 메디컬 프랙티스 다낭</p><p><a href="tel:+84-236-3582-699">+84-236-3582-699</a></p><p style="font-size:.75rem;color:#999;margin-top:4px">영어 가능, 여행자보험 청구 지원</p></div>
+        <div class="sos-card"><h3>&#128737; 여행자보험</h3><p>보험사 연락처를 여기에 메모하세요</p><p style="font-size:.75rem;color:#999">증권번호: ________________</p><p style="font-size:.75rem;color:#999">연락처: ________________</p></div>
+        <div class="sos-card"><h3>&#128222; 유용한 팁</h3><p style="font-size:.82rem;color:#666;line-height:1.8">&middot; 베트남에서 한국 112/119는 안 됩니다<br>&middot; 그랩(Grab) 앱으로 택시 이동이 가장 안전<br>&middot; 여권 사본을 폰에 사진으로 저장해두세요<br>&middot; 호텔 주소를 베트남어로 캡처해두면 편해요</p></div>
+      </div>
+    </div>
+    </div><!-- /all-sections -->
 
     <button class="back-btn-float" onclick="goHome()" style="display: none">
       &#8592; 홈으로
@@ -2653,17 +3010,85 @@
       }
 
       function goHome() {
-        // Show home
-        homeEls.forEach((s) => {
-          const el = document.querySelector(s);
-          if (el) el.style.display = '';
-        });
-        // Hide sections
+        homeEls.forEach((s) => { const el = document.querySelector(s); if(el) el.style.display = ''; });
         if (allSections) allSections.style.display = 'none';
+        // Also hide standalone pages
+        ['viet-page','sos-page'].forEach(id => { const el = document.getElementById(id); if(el) el.style.display = 'none'; });
         if (footer) footer.style.display = 'none';
         if (backBtn) backBtn.style.display = 'none';
         window.scrollTo(0, 0);
       }
+
+      // Also handle standalone pages (viet, sos) outside all-sections
+      const origShowPage = showPage;
+      showPage = function(id) {
+        if (id === 'viet-page' || id === 'sos-page') {
+          homeEls.forEach((s) => { const el = document.querySelector(s); if(el) el.style.display = 'none'; });
+          if (allSections) allSections.style.display = 'none';
+          ['viet-page','sos-page'].forEach(pid => { const el = document.getElementById(pid); if(el) el.style.display = 'none'; });
+          const target = document.getElementById(id);
+          if(target) target.style.display = 'block';
+          if (footer) footer.style.display = 'block';
+          if (backBtn) backBtn.style.display = 'block';
+          window.scrollTo(0, 0);
+        } else {
+          // Also hide standalone pages
+          ['viet-page','sos-page'].forEach(pid => { const el = document.getElementById(pid); if(el) el.style.display = 'none'; });
+          origShowPage(id);
+        }
+      };
+
+      // D-Day Countdown
+      (function() {
+        const trip = new Date('2026-05-07T00:00:00+09:00');
+        const now = new Date();
+        const diff = Math.ceil((trip - now) / (1000*60*60*24));
+        const ddayEl = document.getElementById('dday');
+        const labelEl = document.getElementById('dday-label');
+        if (ddayEl && labelEl) {
+          if (diff > 0) { ddayEl.textContent = 'D-' + diff; labelEl.textContent = '여행까지 ' + diff + '일!'; }
+          else if (diff === 0) { ddayEl.textContent = 'D-DAY'; labelEl.textContent = '오늘 출발!'; }
+          else { ddayEl.textContent = 'D+' + Math.abs(diff); labelEl.textContent = '여행 중!'; }
+        }
+      })();
+
+      // Currency Calculator
+      const RATE = 17.8; // 1 KRW ≈ 17.8 VND
+      function calcToVND() {
+        const krw = document.getElementById('calcKRW').value;
+        if (krw) document.getElementById('calcVND').value = Math.round(krw * RATE);
+        else document.getElementById('calcVND').value = '';
+      }
+      function calcToKRW() {
+        const vnd = document.getElementById('calcVND').value;
+        if (vnd) document.getElementById('calcKRW').value = Math.round(vnd / RATE);
+        else document.getElementById('calcKRW').value = '';
+      }
+      function quickCalc(krw) {
+        document.getElementById('calcKRW').value = krw;
+        calcToVND();
+      }
+
+      // Checklist localStorage
+      (function() {
+        const items = document.querySelectorAll('.check-item');
+        const saved = JSON.parse(localStorage.getItem('vt-checklist') || '{}');
+        items.forEach((item, i) => {
+          const key = 'ck-' + i;
+          if (saved[key]) item.classList.add('checked');
+          item.addEventListener('click', function() {
+            this.classList.toggle('checked');
+            const state = {};
+            items.forEach((it, j) => { if (it.classList.contains('checked')) state['ck-' + j] = true; });
+            localStorage.setItem('vt-checklist', JSON.stringify(state));
+          });
+          // Remove inline onclick to avoid double-toggle
+          item.removeAttribute('onclick');
+        });
+      })();
+
+      // Hide standalone pages on load
+      ['viet-page','sos-page'].forEach(id => { const el = document.getElementById(id); if(el) el.style.display = 'none'; });
     </script>
   </body>
 </html>
