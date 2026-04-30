@@ -405,48 +405,65 @@
 
       /* Calculator */
       .calc-wrap {
-        max-width: 500px;
+        max-width: 400px;
         margin: 0 auto;
-        padding: 20px;
+        padding: 20px 16px;
       }
-      .calc-input-group {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 12px;
-        align-items: center;
+      .calc-row {
+        background: #fff;
+        border-radius: 14px;
+        padding: 14px 16px;
+        margin-bottom: 10px;
+        box-shadow: 0 1px 8px rgba(0,0,0,.03);
+      }
+      .calc-row label {
+        display: block;
+        font-size: .68rem;
+        font-weight: 700;
+        color: #aaa;
+        letter-spacing: .5px;
+        margin-bottom: 6px;
       }
       .calc-input {
-        flex: 1;
-        padding: 14px;
-        border: 2px solid #e0d5c7;
-        border-radius: 12px;
-        font-size: 1.1rem;
+        width: 100%;
+        padding: 0;
+        border: none;
+        font-size: 1.4rem;
+        font-weight: 700;
         font-family: 'Noto Sans KR', sans-serif;
         text-align: right;
         outline: none;
-        transition: 0.2s;
+        color: var(--dark);
+        background: transparent;
       }
-      .calc-input:focus {
-        border-color: var(--primary);
-      }
-      .calc-label {
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: #888;
-        min-width: 40px;
+      .calc-input::placeholder { color: #ddd; font-weight: 400; }
+      .calc-input.vnd-input { color: var(--day1); }
+      .calc-arrow {
         text-align: center;
+        font-size: 1.2rem;
+        color: #ccc;
+        margin: 4px 0;
       }
       .calc-rate {
         text-align: center;
-        font-size: 0.75rem;
-        color: #aaa;
-        margin-bottom: 16px;
+        font-size: 0.72rem;
+        color: #bbb;
+        margin: 14px 0;
+      }
+      .calc-presets-title {
+        font-size: .7rem;
+        font-weight: 700;
+        color: #999;
+        text-align: center;
+        margin-bottom: 10px;
+        letter-spacing: .5px;
       }
       .calc-presets {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
         justify-content: center;
+        margin-bottom: 14px;
       }
       .calc-preset {
         padding: 8px 16px;
@@ -458,7 +475,7 @@
         transition: 0.2s;
         font-family: 'Noto Sans KR', sans-serif;
       }
-      .calc-preset:hover {
+      .calc-preset:hover, .calc-preset.active {
         border-color: var(--primary);
         background: rgba(232, 152, 94, 0.08);
       }
@@ -1620,8 +1637,12 @@
         .sos-card { padding: 16px; }
         .sos-card h3 { font-size: .9rem; }
         .sos-num { font-size: 1.1rem; }
-        .calc-input { padding: 12px; font-size: 1rem; }
+        .calc-wrap { padding: 16px 12px; }
+        .calc-input { font-size: 1.2rem; }
+        .calc-row { padding: 12px 14px; }
+        .calc-row label { font-size: .62rem; }
         .calc-preset { padding: 7px 14px; font-size: .72rem; }
+        .calc-presets-title { font-size: .65rem; }
         .back-btn-float { top: 10px; left: 10px; padding: 8px 16px; font-size: .78rem; }
       }
     </style>
@@ -2628,39 +2649,29 @@
           원 &#8596; 동 간편 변환
         </p>
         <div class="calc-wrap">
-          <div class="calc-input-group">
-            <input
-              type="number"
-              class="calc-input"
-              id="calcKRW"
-              placeholder="원(KRW)"
-              oninput="calcToVND()"
-            />
-            <div class="calc-label">&#8594;</div>
-            <input
-              type="number"
-              class="calc-input"
-              id="calcVND"
-              placeholder="동(VND)"
-              oninput="calcToKRW()"
-            />
+          <div class="calc-row">
+            <label>&#127470;&#127479; 원 (KRW)</label>
+            <input type="text" class="calc-input" id="calcKRW" placeholder="0" inputmode="numeric" oninput="calcFromKRW()">
           </div>
-          <div class="calc-rate">
-            1,000&#8361; &#8776; 17,800&#8363; (참고용)
+          <div class="calc-arrow">&#8597;&#65039;</div>
+          <div class="calc-row">
+            <label>&#127483;&#127475; 동 (VND)</label>
+            <input type="text" class="calc-input vnd-input" id="calcVND" placeholder="0" inputmode="numeric" oninput="calcFromVND()">
           </div>
+          <div class="calc-rate">1,000&#8361; &#8776; 17,800&#8363; (참고용 환율)</div>
+          <div class="calc-presets-title">&#128176; 원 &#8594; 동</div>
           <div class="calc-presets">
-            <button class="calc-preset" onclick="quickCalc(10000)">
-              1만원
-            </button>
-            <button class="calc-preset" onclick="quickCalc(30000)">
-              3만원
-            </button>
-            <button class="calc-preset" onclick="quickCalc(50000)">
-              5만원
-            </button>
-            <button class="calc-preset" onclick="quickCalc(100000)">
-              10만원
-            </button>
+            <button class="calc-preset" onclick="quickKRW(10000)">1만원</button>
+            <button class="calc-preset" onclick="quickKRW(30000)">3만원</button>
+            <button class="calc-preset" onclick="quickKRW(50000)">5만원</button>
+            <button class="calc-preset" onclick="quickKRW(100000)">10만원</button>
+          </div>
+          <div class="calc-presets-title">&#128176; 동 &#8594; 원</div>
+          <div class="calc-presets">
+            <button class="calc-preset" onclick="quickVND(100000)">10만동</button>
+            <button class="calc-preset" onclick="quickVND(200000)">20만동</button>
+            <button class="calc-preset" onclick="quickVND(500000)">50만동</button>
+            <button class="calc-preset" onclick="quickVND(1000000)">100만동</button>
           </div>
         </div>
       </div>
@@ -3085,20 +3096,36 @@
       })();
 
       // Currency Calculator
-      const RATE = 17.8; // 1 KRW ≈ 17.8 VND
-      function calcToVND() {
-        const krw = document.getElementById('calcKRW').value;
-        if (krw) document.getElementById('calcVND').value = Math.round(krw * RATE);
-        else document.getElementById('calcVND').value = '';
+      const RATE = 17.8;
+      function fmt(n) { return n ? n.toLocaleString('ko-KR') : ''; }
+      function parse(s) { return parseInt(String(s).replace(/,/g,''),10) || 0; }
+      function calcFromKRW() {
+        const el = document.getElementById('calcKRW');
+        const raw = parse(el.value);
+        const pos = el.selectionStart;
+        const oldLen = el.value.length;
+        el.value = raw ? fmt(raw) : '';
+        const newLen = el.value.length;
+        el.setSelectionRange(pos + newLen - oldLen, pos + newLen - oldLen);
+        document.getElementById('calcVND').value = raw ? fmt(Math.round(raw * RATE)) : '';
       }
-      function calcToKRW() {
-        const vnd = document.getElementById('calcVND').value;
-        if (vnd) document.getElementById('calcKRW').value = Math.round(vnd / RATE);
-        else document.getElementById('calcKRW').value = '';
+      function calcFromVND() {
+        const el = document.getElementById('calcVND');
+        const raw = parse(el.value);
+        const pos = el.selectionStart;
+        const oldLen = el.value.length;
+        el.value = raw ? fmt(raw) : '';
+        const newLen = el.value.length;
+        el.setSelectionRange(pos + newLen - oldLen, pos + newLen - oldLen);
+        document.getElementById('calcKRW').value = raw ? fmt(Math.round(raw / RATE)) : '';
       }
-      function quickCalc(krw) {
-        document.getElementById('calcKRW').value = krw;
-        calcToVND();
+      function quickKRW(v) {
+        document.getElementById('calcKRW').value = fmt(v);
+        document.getElementById('calcVND').value = fmt(Math.round(v * RATE));
+      }
+      function quickVND(v) {
+        document.getElementById('calcVND').value = fmt(v);
+        document.getElementById('calcKRW').value = fmt(Math.round(v / RATE));
       }
 
       // Checklist localStorage
