@@ -483,12 +483,20 @@
         font-size: 0.88rem;
         font-weight: 600;
         color: var(--dark);
+        flex-shrink: 0;
+      }
+      .phrase-right {
+        text-align: right;
       }
       .phrase-vn {
         font-size: 0.88rem;
         color: var(--day1);
         font-weight: 500;
-        text-align: right;
+      }
+      .phrase-pron {
+        font-size: 0.72rem;
+        color: #999;
+        margin-top: 2px;
       }
       .phrase-section-title {
         font-size: 0.8rem;
@@ -2836,29 +2844,31 @@
       <div class="page-hero page-hero-viet"><h2>&#127466;&#127483; 유용한 베트남어</h2><p>현지에서 바로 쓸 수 있는 필수 표현</p></div>
       <div class="phrase-grid">
         <div class="phrase-section-title">&#128075; 기본 인사</div>
-        <div class="phrase-item"><span class="phrase-ko">안녕하세요</span><span class="phrase-vn">Xin ch&agrave;o</span></div>
-        <div class="phrase-item"><span class="phrase-ko">감사합니다</span><span class="phrase-vn">C&#7843;m &#417;n</span></div>
-        <div class="phrase-item"><span class="phrase-ko">죄송합니다</span><span class="phrase-vn">Xin l&#7895;i</span></div>
-        <div class="phrase-item"><span class="phrase-ko">네 / 아니오</span><span class="phrase-vn">V&acirc;ng / Kh&ocirc;ng</span></div>
+        <div class="phrase-item"><span class="phrase-ko">안녕하세요</span><div class="phrase-right"><div class="phrase-vn">Xin ch&agrave;o</div><div class="phrase-pron">신 짜오</div></div></div>
+        <div class="phrase-item"><span class="phrase-ko">감사합니다</span><div class="phrase-right"><div class="phrase-vn">C&#7843;m &#417;n</div><div class="phrase-pron">깜 언</div></div></div>
+        <div class="phrase-item"><span class="phrase-ko">죄송합니다</span><div class="phrase-right"><div class="phrase-vn">Xin l&#7895;i</div><div class="phrase-pron">신 로이</div></div></div>
+        <div class="phrase-item"><span class="phrase-ko">네 / 아니오</span><div class="phrase-right"><div class="phrase-vn">V&acirc;ng / Kh&ocirc;ng</div><div class="phrase-pron">방 / 콩</div></div></div>
         <div class="phrase-section-title">&#127860; 식당에서</div>
-        <div class="phrase-item"><span class="phrase-ko">얼마예요?</span><span class="phrase-vn">Bao nhi&ecirc;u ti&#7873;n?</span></div>
-        <div class="phrase-item"><span class="phrase-ko">계산이요</span><span class="phrase-vn">T&iacute;nh ti&#7873;n</span></div>
-        <div class="phrase-item"><span class="phrase-ko">맛있어요!</span><span class="phrase-vn">Ngon qu&aacute;!</span></div>
-        <div class="phrase-item"><span class="phrase-ko">맵지 않게 해주세요</span><span class="phrase-vn">Kh&ocirc;ng cay</span></div>
-        <div class="phrase-item"><span class="phrase-ko">고수 빼주세요</span><span class="phrase-vn">Kh&ocirc;ng r&#7855;c rau m&ugrave;i</span></div>
-        <div class="phrase-item"><span class="phrase-ko">물 주세요</span><span class="phrase-vn">Cho t&ocirc;i n&#432;&#7899;c</span></div>
-        <div class="phrase-item"><span class="phrase-ko">메뉴판 주세요</span><span class="phrase-vn">Cho t&ocirc;i xem menu</span></div>
+        <div class="phrase-item"><span class="phrase-ko">얼마예요?</span><div class="phrase-right"><div class="phrase-vn">Bao nhi&ecirc;u ti&#7873;n?</div><div class="phrase-pron">바오 니에우 띠엔?</div></div></div>
+        <div class="phrase-item"><span class="phrase-ko">계산이요</span><div class="phrase-right"><div class="phrase-vn">T&iacute;nh ti&#7873;n</div><div class="phrase-pron">띤 띠엔</div></div></div>
+        <div class="phrase-item"><span class="phrase-ko">맛있어요!</span><div class="phrase-right"><div class="phrase-vn">Ngon qu&aacute;!</div><div class="phrase-pron">응온 꽈!</div></div></div>
+        <div class="phrase-item"><span class="phrase-ko">맵지 않게 해주세요</span><div class="phrase-right"><div class="phrase-vn">Kh&ocirc;ng cay</div><div class="phrase-pron">콩 까이</div></div></div>
+        <div class="phrase-item"><span class="phrase-ko">고수 빼주세요</span><div class="phrase-right"><div class="phrase-vn">Kh&ocirc;ng rau m&ugrave;i</div><div class="phrase-pron">콩 라우 무이</div></div></div>
+        <div class="phrase-item"><span class="phrase-ko">물 주세요</span><div class="phrase-right"><div class="phrase-vn">Cho t&ocirc;i n&#432;&#7899;c</div><div class="phrase-pron">쪼 또이 느억</div></div></div>
+        <div class="phrase-item"><span class="phrase-ko">메뉴판 주세요</span><div class="phrase-right"><div class="phrase-vn">Cho t&ocirc;i xem menu</div><div class="phrase-pron">쪼 또이 쌤 메뉴</div></div></div>
+        <div class="phrase-item"><span class="phrase-ko">이거 하나 주세요</span><div class="phrase-right"><div class="phrase-vn">Cho t&ocirc;i c&aacute;i n&agrave;y</div><div class="phrase-pron">쪼 또이 까이 나이</div></div></div>
+        <div class="phrase-item"><span class="phrase-ko">2개 주세요</span><div class="phrase-right"><div class="phrase-vn">Cho t&ocirc;i hai c&aacute;i</div><div class="phrase-pron">쪼 또이 하이 까이</div></div></div>
         <div class="phrase-section-title">&#128661; 이동/쇼핑</div>
-        <div class="phrase-item"><span class="phrase-ko">여기로 가주세요</span><span class="phrase-vn">&#272;i &#273;&#7871;n &#273;&acirc;y</span></div>
-        <div class="phrase-item"><span class="phrase-ko">할인해주세요</span><span class="phrase-vn">Gi&#7843;m gi&aacute; cho t&ocirc;i</span></div>
-        <div class="phrase-item"><span class="phrase-ko">너무 비싸요</span><span class="phrase-vn">&#272;&#7855;t qu&aacute;</span></div>
-        <div class="phrase-item"><span class="phrase-ko">화장실 어디예요?</span><span class="phrase-vn">Nh&agrave; v&#7879; sinh &#7903; &#273;&acirc;u?</span></div>
+        <div class="phrase-item"><span class="phrase-ko">여기로 가주세요</span><div class="phrase-right"><div class="phrase-vn">&#272;i &#273;&#7871;n &#273;&acirc;y</div><div class="phrase-pron">디 덴 더이</div></div></div>
+        <div class="phrase-item"><span class="phrase-ko">할인해주세요</span><div class="phrase-right"><div class="phrase-vn">Gi&#7843;m gi&aacute; cho t&ocirc;i</div><div class="phrase-pron">잠 자 쪼 또이</div></div></div>
+        <div class="phrase-item"><span class="phrase-ko">너무 비싸요</span><div class="phrase-right"><div class="phrase-vn">&#272;&#7855;t qu&aacute;</div><div class="phrase-pron">닷 꽈</div></div></div>
+        <div class="phrase-item"><span class="phrase-ko">화장실 어디예요?</span><div class="phrase-right"><div class="phrase-vn">Nh&agrave; v&#7879; sinh &#7903; &#273;&acirc;u?</div><div class="phrase-pron">냐 베 신 어 더우?</div></div></div>
         <div class="phrase-section-title">&#128680; 긴급 상황</div>
-        <div class="phrase-item"><span class="phrase-ko">도와주세요!</span><span class="phrase-vn">Gi&uacute;p t&ocirc;i v&#7899;i!</span></div>
-        <div class="phrase-item"><span class="phrase-ko">병원에 가야 해요</span><span class="phrase-vn">T&ocirc;i c&#7847;n &#273;i b&#7879;nh vi&#7879;n</span></div>
+        <div class="phrase-item"><span class="phrase-ko">도와주세요!</span><div class="phrase-right"><div class="phrase-vn">Gi&uacute;p t&ocirc;i v&#7899;i!</div><div class="phrase-pron">쥽 또이 버이!</div></div></div>
+        <div class="phrase-item"><span class="phrase-ko">병원에 가야 해요</span><div class="phrase-right"><div class="phrase-vn">T&ocirc;i c&#7847;n &#273;i b&#7879;nh vi&#7879;n</div><div class="phrase-pron">또이 껀 디 벤 비엔</div></div></div>
         <div class="phrase-section-title">&#128173; 숫자</div>
-        <div class="phrase-item"><span class="phrase-ko">1 / 2 / 3</span><span class="phrase-vn">M&#7897;t / Hai / Ba</span></div>
-        <div class="phrase-item"><span class="phrase-ko">만 / 십만 / 백만</span><span class="phrase-vn">M&#432;&#7901;i ngh&igrave;n / Tr&#259;m ngh&igrave;n / Tri&#7879;u</span></div>
+        <div class="phrase-item"><span class="phrase-ko">1 / 2 / 3 / 4 / 5</span><div class="phrase-right"><div class="phrase-vn">M&#7897;t / Hai / Ba / B&#7889;n / N&#259;m</div><div class="phrase-pron">못 / 하이 / 바 / 본 / 남</div></div></div>
+        <div class="phrase-item"><span class="phrase-ko">만 / 십만 / 백만</span><div class="phrase-right"><div class="phrase-vn">M&#432;&#7901;i ngh&igrave;n / Tr&#259;m ngh&igrave;n / Tri&#7879;u</div><div class="phrase-pron">므어이 응인 / 짬 응인 / 찌에우</div></div></div>
       </div>
     </div>
 
